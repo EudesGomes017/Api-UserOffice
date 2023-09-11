@@ -1,0 +1,15 @@
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\bin\Release\net6.0\Data.deps.json
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\bin\Release\net6.0\Data.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\bin\Release\net6.0\Data.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\bin\Release\net6.0\Domain.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\bin\Release\net6.0\Domain.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\Data.csproj.AssemblyReference.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\Data.AssemblyInfoInputs.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\Data.AssemblyInfo.cs
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\Data.csproj.CoreCompileInputs.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\Data.csproj.CopyComplete
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\Data.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\refint\Data.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\Data.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Release\net6.0\ref\Data.dll

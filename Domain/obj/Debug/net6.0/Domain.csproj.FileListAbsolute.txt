@@ -1,0 +1,12 @@
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\bin\Debug\net6.0\Domain.deps.json
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\bin\Debug\net6.0\Domain.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\bin\Debug\net6.0\Domain.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\obj\Debug\net6.0\Domain.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\obj\Debug\net6.0\refint\Domain.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Domain\obj\Debug\net6.0\ref\Domain.dll
