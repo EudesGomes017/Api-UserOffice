@@ -61,3 +61,10 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\net6.0\refint\
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\net6.0\Api-UserOffice.pdb
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\net6.0\Api-UserOffice.genruntimeconfig.cache
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\net6.0\ref\Api-UserOffice.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Data.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Domain.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Exceptions.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Data.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Domain.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Exceptions.pdb

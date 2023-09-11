@@ -1,0 +1,32 @@
+version: '3.4'
+
+networks:
+    demouseroffice:
+
+services:
+  demoappdb:
+    container_name: app-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports: 
+    - 8002:1433
+    environment:
+    - ACCEPT_EULA=Y
+    - MSSQL_SA_PASSWORD=password@12345#
+    networks:
+    - demouseroffice
+  api-useroffice:
+    container_name: Api-User-Office
+    image: ${DOCKER_REGISTRY-}apiuseroffice
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - 8001:80
+    depends_on:
+      - demoappdb
+    environment:
+      - DB_HOST=demoappdb
+      - DB_NAME=demoapiuseroffice
+      - DB_SA_PASSWORD=password@12345#
+    networks:
+      - demouseroffice
