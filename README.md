@@ -1,5 +1,5 @@
 
-Um aplicativo em C# + .Netcore, O SISTEMA É UMA PLATAFORMA DE BackOffice CONTENDO O CADASTRO DE PESSOAs e fornecedores.
+Um aplicativo em C# + .Netcore, O sistema é uma plataforma de BackOffice contendo o cadastro de pessoas e fornecedores.
 
 Utilizados as tecnologias:
 
