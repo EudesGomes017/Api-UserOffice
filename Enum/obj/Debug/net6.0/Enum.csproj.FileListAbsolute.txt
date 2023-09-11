@@ -1,0 +1,12 @@
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\bin\Debug\net6.0\Enum.deps.json
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\bin\Debug\net6.0\Enum.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\bin\Debug\net6.0\Enum.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\obj\Debug\net6.0\Enum.csproj.AssemblyReference.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\obj\Debug\net6.0\Enum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\obj\Debug\net6.0\Enum.AssemblyInfoInputs.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\obj\Debug\net6.0\Enum.AssemblyInfo.cs
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\obj\Debug\net6.0\Enum.csproj.CoreCompileInputs.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\obj\Debug\net6.0\Enum.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\obj\Debug\net6.0\refint\Enum.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\obj\Debug\net6.0\Enum.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Enum\obj\Debug\net6.0\ref\Enum.dll

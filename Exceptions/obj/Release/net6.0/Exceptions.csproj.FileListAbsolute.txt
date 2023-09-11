@@ -1,0 +1,12 @@
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\bin\Release\net6.0\Exceptions.deps.json
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\bin\Release\net6.0\Exceptions.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\bin\Release\net6.0\Exceptions.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Release\net6.0\Exceptions.csproj.AssemblyReference.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Release\net6.0\Exceptions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Release\net6.0\Exceptions.AssemblyInfoInputs.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Release\net6.0\Exceptions.AssemblyInfo.cs
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Release\net6.0\Exceptions.csproj.CoreCompileInputs.cache
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Release\net6.0\Exceptions.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Release\net6.0\refint\Exceptions.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Release\net6.0\Exceptions.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Release\net6.0\ref\Exceptions.dll
