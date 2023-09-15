@@ -14,4 +14,7 @@ public enum StatusUser
 
     [Description("Usuário")]
     Usuario = 4,
+
+    [Description("Colaborador")]
+    Colaborador = 5,
 }

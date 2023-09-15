@@ -1,15 +1,11 @@
-﻿using Domain.Enums;
-using Domain.Models;
+﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Diagnostics;
-using System.Text.Json.Serialization;
 
 namespace Data.Mapping;
 
 public class DepartmentMap : IEntityTypeConfiguration<Department>
 {
-
 
     public void Configure(EntityTypeBuilder<Department> builder)
     {
