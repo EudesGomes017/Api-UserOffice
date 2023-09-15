@@ -4,15 +4,26 @@ services:
     build:
       context: C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice
       dockerfile: Dockerfile
+    container_name: Api-User-Office
+    depends_on:
+      demoappdb:
+        condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
+      DB_HOST: demoappdb
+      DB_NAME: demoapiuseroffice
+      DB_SA_PASSWORD: password@12345#
     image: apiuseroffice
     networks:
-      default: null
+      demouseroffice: null
     ports:
     - mode: ingress
       target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "8001"
       protocol: tcp
     - mode: ingress
       target: 443
@@ -30,6 +41,19 @@ services:
       read_only: true
       bind:
         create_host_path: true
+  demoappdb:
+    container_name: app-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: password@12345#
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      demouseroffice: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "8002"
+      protocol: tcp
 networks:
-  default:
-    name: dockercompose10537921386562918307_default
+  demouseroffice:
+    name: dockercompose10537921386562918307_demouseroffice
