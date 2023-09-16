@@ -10,7 +10,6 @@
 	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <Folder Include="Services\ServiceAddresRegister\" />
     <Folder Include="Services\ServicesDepartment\" />
-    <Folder Include="Services\serviceUser\" />
     <Folder Include="Validators\ValidatorAddressRegister\" />
     <Folder Include="Validators\ValidatorDepartment\" />
     <Folder Include="Validators\ValidatorUser\" />
