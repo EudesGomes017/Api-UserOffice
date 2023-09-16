@@ -3,7 +3,7 @@
     public class AddressRegister
     {
     public int Id { get; set; }
-    public int Cep { get; set; }
+    public string Cep { get; set; }
     public string Patio { get; set; }
     public string Neighborhood { get; set; }
     public string Locality { get; set; }
