@@ -13,3 +13,5 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Debug\net6.0\ref\Data.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Data\bin\Debug\net6.0\Domain.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Data\bin\Debug\net6.0\Domain.pdb
 C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Debug\net6.0\Data.csproj.CopyComplete
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\bin\Debug\net6.0\Data.runtimeconfig.json
+C:\Projeto C#\Projeto2023\Api-UserOffice\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache

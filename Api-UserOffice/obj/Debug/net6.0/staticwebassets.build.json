@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "EE2JkB9uSmsNxBW0dcCu39dN2yfQ+QCyv/vSHNNGexA=",
+  "Source": "Api-UserOffice",
+  "BasePath": "_content/Api-UserOffice",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

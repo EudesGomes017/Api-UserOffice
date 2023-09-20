@@ -9,7 +9,7 @@ public class DepartmentMap : IEntityTypeConfiguration<Department>
 
     public void Configure(EntityTypeBuilder<Department> builder)
     {
-        builder.ToTable("User");
+        builder.ToTable("Department");
         builder.HasKey(x => x.Id); 
         builder.Property(x => x.Namedepartment).IsRequired().HasMaxLength(255);
         builder.Property(x => x.Responsible).IsRequired().HasMaxLength(255);

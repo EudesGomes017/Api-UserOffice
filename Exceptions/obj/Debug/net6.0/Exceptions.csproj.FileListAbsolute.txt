@@ -10,3 +10,5 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Debug\net6.0\Exceptions.
 C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Debug\net6.0\refint\Exceptions.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Debug\net6.0\Exceptions.pdb
 C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Debug\net6.0\ref\Exceptions.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\bin\Debug\net6.0\Exceptions.runtimeconfig.json
+C:\Projeto C#\Projeto2023\Api-UserOffice\Exceptions\obj\Debug\net6.0\Exceptions.genruntimeconfig.cache

@@ -68,3 +68,10 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Excepti
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Data.pdb
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Domain.pdb
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Exceptions.pdb
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\AutoMapper.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Humanizer.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Newtonsoft.Json.dll
