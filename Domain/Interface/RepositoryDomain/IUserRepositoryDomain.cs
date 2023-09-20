@@ -2,7 +2,7 @@
 
 namespace Domain.Interface.RepositoryDomain;
 
-public interface IUserRepositoryDomain
+public interface IUserRepositoryDomain : IGeralRepositoryDomain
 {
     Task<User> UserByIdAsync(int? id);
     Task<User> UserByEmailAsync(string? email);

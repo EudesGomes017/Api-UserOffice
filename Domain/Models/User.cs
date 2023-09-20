@@ -17,8 +17,6 @@ public class User
     public DateTime? UpdateAt { get; set; }
     public StatusUser Person { get; set; }
     public virtual AddressRegister AddressRegister { get; set; }
-    [JsonIgnore]
-    public Department departmentId { get; set; }
     public virtual ICollection<Department?> Departments { get; set; }
 
 }

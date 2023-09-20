@@ -11,8 +11,7 @@ public class Department
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdateAt { get; set; }
     public int UserId { get; set; }
-    [JsonIgnore]
-    public virtual User user { get; set; }
+    public User user { get; set; }
     public StatusUser Qulification { get; set; }
 
 }

@@ -23,3 +23,5 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Domain.pdb
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\AutoMapper.dll
