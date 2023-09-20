@@ -25,3 +25,37 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.CopyComplete
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\AutoMapper.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\appsettings.Development.json
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Api-UserOffice.deps.json
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Api-UserOffice.runtimeconfig.json
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\appsettings.json
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Api-UserOffice.exe
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Api-UserOffice.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Domain.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Data.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\FluentValidation.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\AutoMapper.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Exceptions.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Api-UserOffice.pdb
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Domain.pdb
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Data.pdb
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Exceptions.pdb
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.CopyComplete

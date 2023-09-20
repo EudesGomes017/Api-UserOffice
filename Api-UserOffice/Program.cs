@@ -19,6 +19,9 @@ namespace Api_UserOffice
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
+            builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             builder.Services.AddApplication(builder.Configuration);
 
