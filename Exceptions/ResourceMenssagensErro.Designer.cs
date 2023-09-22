@@ -106,6 +106,15 @@ namespace Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Número do Documento está invalido!.
+        /// </summary>
+        public static string DOCUMENTO_INVALIDO {
+            get {
+                return ResourceManager.GetString("DOCUMENTO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Esse e-mail já existe na base de Dados!.
         /// </summary>
         public static string EMAIL_CADASTRADO {

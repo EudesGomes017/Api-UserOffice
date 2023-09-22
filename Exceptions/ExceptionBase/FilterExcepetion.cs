@@ -34,7 +34,7 @@ public class FilterExcepetion : IExceptionFilter
         {
             context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
         }
-        context.Result = new ObjectResult(new ResponseErroJson(ResourceMenssagensErro.ERRO_DESCONHECIDO));
+        context.Result = new ObjectResult(new ResponseErroJson(erroValidatorException.MesssageError));
     }
 
     private void SendMessageErroUnknown(ExceptionContext context)

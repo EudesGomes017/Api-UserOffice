@@ -1,5 +1,6 @@
 ﻿using Domain.Enums;
 using Domain.Models;
+using System.Text.Json.Serialization;
 
 namespace Domain.Dto;
 
@@ -10,10 +11,9 @@ public class UserDto
     public string? Password { get; set; }
     public string? Email { get; set; }
     public string FancyName { get; set; }
-    public bool UserDesativado { get; set; }
-    public int CPF { get; set; }
-    public int CNPJ { get; set; }
+    public string Documento { get; set; }
     public StatusUser Person { get; set; }
-    public virtual AddressRegister AddressRegister { get; set; }
+    [JsonIgnore]
+    public virtual AddressRegister? AddressRegister { get; set; }
 }
 

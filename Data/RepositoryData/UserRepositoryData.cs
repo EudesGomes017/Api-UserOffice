@@ -30,12 +30,21 @@ public class UserRepositoryData : GeralRepositoryData, IUserRepositoryDomain
         IQueryable<User> query = _apiUserOfficeContext.User;
 
         query = query.AsNoTracking()
-                     .Include(c => c.Departments)
-                     .Include(c => c.AddressRegister)
-                     .Where(x => x.Email == email)
-                     .OrderBy(x => x.Id);
+
+                     .Where(x => x.Email == email);
 
         return await query.FirstOrDefaultAsync();
+    }
+
+    public async Task<User> UserDocument(string? document)
+    {
+        IQueryable<User> query = _apiUserOfficeContext.User;
+
+        query = query.AsNoTracking()
+
+                     .Where(x => x.Documento == document);
+
+        return await query.SingleOrDefaultAsync();
     }
 
     public async Task<User> UserByIdAsync(int? id)

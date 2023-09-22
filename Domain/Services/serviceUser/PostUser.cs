@@ -9,6 +9,11 @@ using Domain.Token;
 using Domain.Validators.ValidatorUser;
 using Exceptions;
 using Exceptions.ExceptionBase;
+using FluentValidation;
+using System.Reflection;
+using System.Reflection.Metadata;
+using System.Runtime.Intrinsics.X86;
+using System.Text.RegularExpressions;
 
 namespace Domain.Services.serviceUser;
 
@@ -17,7 +22,9 @@ public class PostUser : IPostUser
 
     private readonly IUserRepositoryDomain _userRepositoryDomain;
     private readonly ISearchEamil _searchEamil;
+
     private readonly IMapper _mapper;
+
     private readonly EncryptPassword _encryptPassword;
     private readonly TokenController _tokenController;
 
@@ -35,6 +42,7 @@ public class PostUser : IPostUser
 
     public async Task<ReplyJsonRegisteredUser> AddUserAsync(UserDto user)
     {
+
         await validator(user);
 
         try
@@ -67,10 +75,15 @@ public class PostUser : IPostUser
 
     private async Task validator(UserDto user)
     {
+
         var validator = new RegisterUserValidator();
+
+       
         var resultado = validator.Validate(user);
 
         var existUserEmail = await _searchEamil.SearchEamil(user.Email);
+
+
         if (existUserEmail != null)
         {
             resultado.Errors.Add(new FluentValidation.Results.ValidationFailure("email", ResourceMenssagensErro.EMAIL_CADASTRADO));
@@ -82,6 +95,5 @@ public class PostUser : IPostUser
             throw new ErroValidatorException(messageErro);
         }
     }
-
 }
 

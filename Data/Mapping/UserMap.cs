@@ -17,9 +17,7 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.Property(x => x.Email).IsRequired().HasMaxLength(255);
         builder.Property(x => x.Password).IsRequired();
         builder.Property(x => x.FancyName).IsRequired();
-        builder.Property(x => x.UserDesativado).IsRequired();
-        builder.Property(x => x.CPF).IsRequired();
-        builder.Property(x => x.CNPJ).IsRequired();
+        builder.Property(x => x.Documento).IsRequired();
         builder.Property(x => x.Person).IsRequired();
        // builder.Property(x => x.departmentId).HasMaxLength(255).IsRequired();
         builder.Property(x => x.CreatedAt).IsRequired().HasMaxLength(255);

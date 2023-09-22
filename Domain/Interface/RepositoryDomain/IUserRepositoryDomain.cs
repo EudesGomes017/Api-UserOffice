@@ -6,6 +6,7 @@ public interface IUserRepositoryDomain : IGeralRepositoryDomain
 {
     Task<User> UserByIdAsync(int? id);
     Task<User> UserByEmailAsync(string? email);
-    Task<User[]> AllUsersAsync();
+    Task<User> UserDocument(string? documento);
+   // Task<User> AllUsersAsync();
 }
 
