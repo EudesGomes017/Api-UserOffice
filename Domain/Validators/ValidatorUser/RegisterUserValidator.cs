@@ -32,7 +32,7 @@ public class RegisterUserValidator : AbstractValidator<UserDto>
         When(p => !string.IsNullOrWhiteSpace(p.Documento), () =>
         {
             RuleFor(x => x.Documento)
-          .Must(ValidatorCpf)
+          .Must(ValidatorDocument)
           .WithMessage(ResourceMenssagensErro.DOCUMENTO_INVALIDO);
             //RuleFor(p => p.Documento).Custom((documento, contexto) =>
             //{
@@ -47,17 +47,24 @@ public class RegisterUserValidator : AbstractValidator<UserDto>
         });
     }
 
-    private bool ValidatorCpf(string document)
+    private bool ValidatorDocument(string document)
     {
         var result = false;
 
-        var cpf = new DocumentValidator();
+        var validadorDcument = new DocumentValidator();
+       
+       
         string padraDcoumento = Regex.Replace(document, @"\D", ""); // \D corresponde a qualquer caractere que não seja um dígito
 
 
         if (padraDcoumento.Length == 11)
         {
-            result = cpf.validatorDocument(padraDcoumento);
+            result = validadorDcument.validatorDocumentCpf(padraDcoumento);
+        }
+        
+        if (padraDcoumento.Length == 14)
+        {
+            result = validadorDcument.validatorDocumentCnpj(padraDcoumento);
         }
         return result;
     }
