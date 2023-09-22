@@ -10,13 +10,13 @@ public class User
     public string? Password { get; set; }
     public string? Email { get; set; }
     public string FancyName { get; set; }
-    public bool UserDesativado { get; set; }
-    public int CPF { get; set; }
-    public int CNPJ { get; set; }
+    public string Documento { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdateAt { get; set; }
     public StatusUser Person { get; set; }
-    public virtual AddressRegister AddressRegister { get; set; }
+    [JsonIgnore]
+    public virtual AddressRegister? AddressRegister { get; set; }
+    [JsonIgnore]
     public virtual ICollection<Department?> Departments { get; set; }
 
 }

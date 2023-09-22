@@ -59,3 +59,10 @@ C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\bin\Debug\Exceptions.pdb
 C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Exceptions.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\FluentValidation.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Exceptions.pdb

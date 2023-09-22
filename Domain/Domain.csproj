@@ -21,10 +21,10 @@
 	    <PrivateAssets>all</PrivateAssets>
 	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
+	  <Folder Include="NewFolder\" />
     <Folder Include="Services\ServiceAddresRegister\" />
     <Folder Include="Services\ServicesDepartment\" />
     <Folder Include="Validators\ValidatorAddressRegister\" />
-    <Folder Include="Validators\ValidatorDepartment\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -13,8 +13,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice:/app
-      - C:\Users\steel\Downloads\Api-UserOffice\Api-UserOffice:/src
+      - C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice:/app
+      - C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice:/src
       - C:\Users\steel\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\steel\.nuget\packages\:/root/.nuget/packages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

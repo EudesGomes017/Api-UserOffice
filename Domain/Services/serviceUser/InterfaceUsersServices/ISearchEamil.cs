@@ -1,6 +1,6 @@
 ﻿using Domain.Dto;
 
-namespace Domain.Services.serviceUser;
+namespace Domain.Services.serviceUser.InterfaceUsersServices;
 
 public interface ISearchEamil
 {
