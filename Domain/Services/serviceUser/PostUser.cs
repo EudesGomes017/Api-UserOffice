@@ -9,11 +9,6 @@ using Domain.Token;
 using Domain.Validators.ValidatorUser;
 using Exceptions;
 using Exceptions.ExceptionBase;
-using FluentValidation;
-using System.Reflection;
-using System.Reflection.Metadata;
-using System.Runtime.Intrinsics.X86;
-using System.Text.RegularExpressions;
 
 namespace Domain.Services.serviceUser;
 
