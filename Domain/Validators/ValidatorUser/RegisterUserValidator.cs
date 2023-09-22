@@ -1,4 +1,6 @@
 ﻿using Domain.Dto;
+using Domain.Validators.StrategyDocument;
+using Domain.Validators.StrategyDocument.Interface;
 using Domain.Validators.ValidatorDocument;
 using Exceptions;
 using FluentValidation;
@@ -8,6 +10,7 @@ namespace Domain.Validators.ValidatorUser;
 
 public class RegisterUserValidator : AbstractValidator<UserDto>
 {
+
     public RegisterUserValidator()
     {
         RuleFor(n => n.Name).NotEmpty().WithMessage(ResourceMenssagensErro.ADICIAONAR_USER);
@@ -49,24 +52,23 @@ public class RegisterUserValidator : AbstractValidator<UserDto>
 
     private bool ValidatorDocument(string document)
     {
-        var result = false;
-
-        var validadorDcument = new DocumentValidator();
-       
-       
         string padraDcoumento = Regex.Replace(document, @"\D", ""); // \D corresponde a qualquer caractere que não seja um dígito
 
+        IStrattegyValidatoDocument  validateDocument;      
 
         if (padraDcoumento.Length == 11)
         {
-            result = validadorDcument.validatorDocumentCpf(padraDcoumento);
+            validateDocument = new StrategyValidatorCpf();
         }
-        
-        if (padraDcoumento.Length == 14)
+
+        else  if (padraDcoumento.Length == 14)
         {
-            result = validadorDcument.validatorDocumentCnpj(padraDcoumento);
+            validateDocument = new StrategyValidatorCnpj();
         }
-        return result;
+            
+        else return false;
+
+        return validateDocument.IsValidator(padraDcoumento);
     }
 }
 
