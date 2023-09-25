@@ -53,8 +53,6 @@ namespace Api_UserOffice
 
             builder.Services.AddScoped<IDepartmentDomain, DepartmentrRepositoryData>();
             builder.Services.AddScoped<IGeralRepositoryDomain, GeralRepositoryData>();
-         
-
 
             // Add services to the container.
             builder.Services.AddControllers()

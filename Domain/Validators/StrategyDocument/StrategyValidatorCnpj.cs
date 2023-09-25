@@ -1,8 +1,7 @@
-﻿using Domain.Validators.StrategyDocument.Interface;
+﻿namespace Domain.Validators.StrategyDocument;
 
-namespace Domain.Validators.StrategyDocument;
 
-public class StrategyValidatorCnpj : IStrattegyValidatoDocument
+public class StrategyValidatorCnpj : IStrategyValidatoDocument
 {
     public bool IsValidator(string document)
     {

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "LrS9gaT/CXTR5t/gIYSKyamVOfn54MBmznjGFz6jrASv6ViiEhTRlGjt9oS9ZIBOeIdRG9HUifteR/vdNeVEEg==",
+  "dgSpecHash": "A6KAIVFavUXHiPFfnyuhT6VIEkUrRUadSTCLz7+zeaxxvIjKSU82Bjw+jW7aJXuXlOBG0cV5egLHS+DXftE1gw==",
   "success": true,
   "projectFilePath": "C:\\Projeto C#\\Projeto2023\\Api-UserOffice\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steel\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\steel\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\steel\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\steel\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\steel\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\steel\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
