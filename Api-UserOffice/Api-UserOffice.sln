@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "..\Exceptions
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D6828BEA-4DD0-47A8-BA4A-BA7B1DBC5E49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validator.Test", "..\Validator.Test\Validator.Test.csproj", "{59316765-3B41-47C1-8092-742E41D408BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D6828BEA-4DD0-47A8-BA4A-BA7B1DBC5E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6828BEA-4DD0-47A8-BA4A-BA7B1DBC5E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6828BEA-4DD0-47A8-BA4A-BA7B1DBC5E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59316765-3B41-47C1-8092-742E41D408BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59316765-3B41-47C1-8092-742E41D408BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59316765-3B41-47C1-8092-742E41D408BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59316765-3B41-47C1-8092-742E41D408BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

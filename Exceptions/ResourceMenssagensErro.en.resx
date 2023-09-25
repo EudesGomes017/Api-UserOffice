@@ -141,11 +141,17 @@
   <data name="EMAIL_INVALIDO" xml:space="preserve">
     <value>Invalid e-mail address</value>
   </data>
+  <data name="EMAIL_VAZIO" xml:space="preserve">
+    <value>The email is empty!</value>
+  </data>
   <data name="ERRO_DESCONHECIDO" xml:space="preserve">
     <value>Unknown error !</value>
   </data>
   <data name="LISTA_VAZIA" xml:space="preserve">
     <value>The list of user' s is empty!</value>
+  </data>
+  <data name="NAME_USER" xml:space="preserve">
+    <value>Username is empty!</value>
   </data>
   <data name="NOT_FOUND" xml:space="preserve">
     <value>No registration in the database!</value>

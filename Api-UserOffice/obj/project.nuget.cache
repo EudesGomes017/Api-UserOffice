@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "SwTdclWhEd6fIfVjPlLNWl2zneJW6HbpF5tZOs8a8XLzUmBYfoTre973sz1tlTvjGWJu4OgC860JXeVoo1kzjg==",
+  "dgSpecHash": "FyhtoAPYw2LGfNmkuj2o9Nfa58esEQX3fEOHnFvzeFtOIjSnuDfDNZ8y879tRmCtGJ1FGEmQvSFN4xcR95MSUg==",
   "success": true,
   "projectFilePath": "C:\\Projeto C#\\Projeto2023\\Api-UserOffice\\Api-UserOffice\\Api-UserOffice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steel\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\steel\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\steel\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\steel\\.nuget\\packages\\fluentmigrator.abstractions\\3.3.2\\fluentmigrator.abstractions.3.3.2.nupkg.sha512",
     "C:\\Users\\steel\\.nuget\\packages\\fluentmigrator.runner.core\\3.3.2\\fluentmigrator.runner.core.3.3.2.nupkg.sha512",
     "C:\\Users\\steel\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",

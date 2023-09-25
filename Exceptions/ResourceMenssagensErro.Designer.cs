@@ -133,6 +133,15 @@ namespace Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O e-mail está vazio!.
+        /// </summary>
+        public static string EMAIL_VAZIO {
+            get {
+                return ResourceManager.GetString("EMAIL_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Erro desconhecido !.
         /// </summary>
         public static string ERRO_DESCONHECIDO {
@@ -147,6 +156,15 @@ namespace Exceptions {
         public static string LISTA_VAZIA {
             get {
                 return ResourceManager.GetString("LISTA_VAZIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome do Usuário está vazio!.
+        /// </summary>
+        public static string NAME_USER {
+            get {
+                return ResourceManager.GetString("NAME_USER", resourceCulture);
             }
         }
         

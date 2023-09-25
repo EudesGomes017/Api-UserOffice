@@ -1,7 +1,5 @@
 ﻿using Domain.Dto;
 using Domain.Validators.StrategyDocument;
-using Domain.Validators.StrategyDocument.Interface;
-using Domain.Validators.ValidatorDocument;
 using Exceptions;
 using FluentValidation;
 using System.Text.RegularExpressions;
@@ -13,8 +11,8 @@ public class RegisterUserValidator : AbstractValidator<UserDto>
 
     public RegisterUserValidator()
     {
-        RuleFor(n => n.Name).NotEmpty().WithMessage(ResourceMenssagensErro.ADICIAONAR_USER);
-        RuleFor(e => e.Email).NotEmpty().WithMessage(ResourceMenssagensErro.BUSCA_ID_EMAIL);
+        RuleFor(n => n.Name).NotEmpty().WithMessage(ResourceMenssagensErro.NAME_USER);
+        RuleFor(e => e.Email).NotEmpty().WithMessage(ResourceMenssagensErro.EMAIL_VAZIO);
 
         When(e => !string.IsNullOrWhiteSpace(e.Email), () =>
         {
@@ -29,7 +27,7 @@ public class RegisterUserValidator : AbstractValidator<UserDto>
 
         RuleFor(x => x.Documento)
             .NotEmpty()
-            .WithMessage(ResourceMenssagensErro.PASSWORD_CARACTER);
+            .WithMessage(ResourceMenssagensErro.DOCUMENTO_INVALIDO);
 
         /// função de validação customizada, para a propriedade documento
         When(p => !string.IsNullOrWhiteSpace(p.Documento), () =>
@@ -54,7 +52,7 @@ public class RegisterUserValidator : AbstractValidator<UserDto>
     {
         string padraDcoumento = Regex.Replace(document, @"\D", ""); // \D corresponde a qualquer caractere que não seja um dígito
 
-        IStrattegyValidatoDocument  validateDocument;      
+        IStrategyValidatoDocument  validateDocument;      
 
         if (padraDcoumento.Length == 11)
         {
