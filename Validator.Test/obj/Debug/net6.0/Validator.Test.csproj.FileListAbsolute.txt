@@ -174,3 +174,8 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\obj\Debug\net6.0\Validat
 C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\obj\Debug\net6.0\ref\Validator.Test.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\Bogus.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\FluentAssertions.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\Castle.Core.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\Moq.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\System.Diagnostics.EventLog.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll

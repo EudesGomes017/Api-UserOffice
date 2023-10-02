@@ -17,14 +17,14 @@ public class UserEamil : ISearchEamil
         _mapper = mapper;
     }
 
-    public async Task<UserDto> SearchEamil(string email)
+    public async Task<bool> ExisteUserEmail(string email)
     {
-        UserDto user;
+        bool user;
 
         try
         {
             var result = await _userRepositoryDomain.UserByEmailAsync(email);
-            user = _mapper.Map<UserDto>(result);
+            user = _mapper.Map<bool>(result);
         }
         catch (Exception ex)
         {
@@ -33,6 +33,13 @@ public class UserEamil : ISearchEamil
         return user;
 
     }
+
+    public Task<bool> Test(long id)
+    {
+        throw new NotImplementedException();
+    }
+
+    
 }
 
 
