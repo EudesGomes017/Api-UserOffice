@@ -23,7 +23,8 @@ public class PostUser : IPostUser
     private readonly EncryptPassword _encryptPassword;
     private readonly TokenController _tokenController;
 
-    public PostUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, ISearchEamil searchEamil, EncryptPassword encryptPassword, TokenController tokenController)
+    public PostUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword, 
+        TokenController tokenController, ISearchEamil searchEamil)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _searchEamil = searchEamil;
@@ -46,26 +47,22 @@ public class PostUser : IPostUser
             var result = _mapper.Map<User>(user);
             result.UpdateAt = DateTime.Now;
             _userRepositoryDomain.Adicionar(result);
-
+           
             var token = _tokenController.GerarToken(result.Email);
-
-            if (await _userRepositoryDomain.SalvarMudancasAsync())
-            {
+           
+            await _userRepositoryDomain.SalvarMudancasAsync();
+            
                 return new ReplyJsonRegisteredUser
                 {
                     Token = token
                 };
-            }
-
-            throw new SistemaTaskException();
 
         }
-        catch (SistemaTaskException)
+        catch (ErroValidatorException)
         {
 
-            throw new SistemaTaskException();
+            throw new ErroValidatorException(new List<string> { "erro Servidor" });
         }
-
     }
 
     private async Task validator(UserDto user)
@@ -76,10 +73,10 @@ public class PostUser : IPostUser
        
         var resultado = validator.Validate(user);
 
-        var existUserEmail = await _searchEamil.SearchEamil(user.Email);
+        var existUserEmail = await _searchEamil.ExisteUserEmail(user.Email);
 
 
-        if (existUserEmail != null)
+        if (existUserEmail)
         {
             resultado.Errors.Add(new FluentValidation.Results.ValidationFailure("email", ResourceMenssagensErro.EMAIL_CADASTRADO));
         }

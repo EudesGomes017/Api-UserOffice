@@ -160,3 +160,4 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\FluentM
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\FluentMigrator.Runner.Core.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\FluentValidation.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\de-DE\FluentMigrator.Abstractions.resources.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Bogus.dll

@@ -1,5 +1,4 @@
 ﻿using Domain.Models;
-
 namespace Domain.Interface.RepositoryDomain;
 
 public interface IUserRepositoryDomain : IGeralRepositoryDomain

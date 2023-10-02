@@ -1,9 +1,8 @@
-﻿using Domain.Dto;
-
-namespace Domain.Services.serviceUser.InterfaceUsersServices;
+﻿namespace Domain.Services.serviceUser.InterfaceUsersServices;
 
 public interface ISearchEamil
 {
-    Task<UserDto> SearchEamil(string email);
+    Task<bool> ExisteUserEmail(string email);
+    Task<bool> Test(long id);
 }
 

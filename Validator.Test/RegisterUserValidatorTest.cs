@@ -3,6 +3,7 @@ using Domain.Validators.ValidatorUser;
 using Exceptions;
 using FluentAssertions;
 using Validator.Test.UtilsTeste;
+using Xunit;
 
 namespace Validator.Test
 {
