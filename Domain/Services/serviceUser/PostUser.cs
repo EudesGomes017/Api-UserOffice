@@ -23,7 +23,7 @@ public class PostUser : IPostUser
     private readonly EncryptPassword _encryptPassword;
     private readonly TokenController _tokenController;
 
-    public PostUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword, 
+    public PostUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword,
         TokenController tokenController, ISearchEamil searchEamil)
     {
         _userRepositoryDomain = userRepositoryDomain;
@@ -39,23 +39,27 @@ public class PostUser : IPostUser
     public async Task<ReplyJsonRegisteredUser> AddUserAsync(UserDto user)
     {
 
+       
         await validator(user);
 
         try
         {
-            user.Password = _encryptPassword.encrypt(user.Password); // senha criptografada
+           
+            var Password = _encryptPassword.encrypt(user.Password);
             var result = _mapper.Map<User>(user);
             result.UpdateAt = DateTime.Now;
             _userRepositoryDomain.Adicionar(result);
-           
+
+
             var token = _tokenController.GerarToken(result.Email);
-           
             await _userRepositoryDomain.SalvarMudancasAsync();
-            
-                return new ReplyJsonRegisteredUser
-                {
-                    Token = token
-                };
+
+          //  result.Password = "";
+
+            return new ReplyJsonRegisteredUser
+            {
+                Token = token
+            }; ;
 
         }
         catch (ErroValidatorException)
@@ -70,11 +74,10 @@ public class PostUser : IPostUser
 
         var validator = new RegisterUserValidator();
 
-       
+
         var resultado = validator.Validate(user);
 
-        var existUserEmail = await _searchEamil.ExisteUserEmail(user.Email);
-
+        var existUserEmail = await _searchEamil.SearchrEmail(user.Email);
 
         if (existUserEmail)
         {
