@@ -59,5 +59,7 @@ public class UserRepositoryData : GeralRepositoryData, IUserRepositoryDomain
 
         return await query.FirstOrDefaultAsync();
     }
+
+   
 }
 

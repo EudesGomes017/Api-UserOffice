@@ -203,5 +203,14 @@ namespace Exceptions {
                 return ResourceManager.GetString("PHONE_INVALIDO", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erro ao informar o Login.
+        /// </summary>
+        public static string USER_FAIL_LOGIN {
+            get {
+                return ResourceManager.GetString("USER_FAIL_LOGIN", resourceCulture);
+            }
+        }
     }
 }

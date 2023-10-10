@@ -11,6 +11,7 @@ public class ApiSistemaProfile : Profile
         CreateMap<User, UserDto>().ReverseMap();
         CreateMap<Department, DepartmentDto>().ReverseMap();
         CreateMap<AddressRegister, AddressRegisterDto>().ReverseMap();
+        CreateMap<User, AuthDto>().ReverseMap();
     }
 }
 

@@ -1,5 +1,4 @@
-﻿using Domain.Interface.RepositoryDomain;
-using Domain.Services.serviceUser.InterfaceUsersServices;
+﻿using Domain.Services.serviceUser.InterfaceUsersServices;
 using Moq;
 
 namespace Validator.Test.RepositoryTest;
@@ -26,7 +25,7 @@ public class UserReadOnlyRepositoryBuilder
     public UserReadOnlyRepositoryBuilder ExisteUserEmail(string email)
     {
         if (!string.IsNullOrEmpty(email))
-        _searEmail.Setup(i => i.ExisteUserEmail(email)).ReturnsAsync(true);
+        _searEmail.Setup(i => i.SearchrEmail(email)).ReturnsAsync(true);
 
         return this;
     }

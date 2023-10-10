@@ -2,7 +2,6 @@
 using Exceptions;
 using Exceptions.ExceptionBase;
 using FluentAssertions;
-using Moq;
 using Validator.Test.MapperBuilderTest;
 using Validator.Test.RepositoryTest;
 using Validator.Test.UtilsTeste;
@@ -13,7 +12,7 @@ namespace Validator.Test.UserserviceTest;
 public class PostUserTest
 {
     [Fact]
-    public async Task Validator_Sucess()
+    public async Task Validator_Sucess() 
     {
         var requisicao = RequestUserBuilder.Build();
 

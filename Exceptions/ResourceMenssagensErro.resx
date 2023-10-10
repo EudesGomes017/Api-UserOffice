@@ -165,4 +165,7 @@
   <data name="PHONE_INVALIDO" xml:space="preserve">
     <value>Número do telefone inválido !</value>
   </data>
+  <data name="USER_FAIL_LOGIN" xml:space="preserve">
+    <value>Erro ao informar o Login</value>
+  </data>
 </root>
