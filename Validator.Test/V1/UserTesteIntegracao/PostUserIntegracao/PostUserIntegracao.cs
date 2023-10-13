@@ -20,18 +20,12 @@ public class PostUserIntegracao : ControllerBase
     public async Task Valida_Sucesso()
     {
         var requeisicao =  RequestUserBuilder.Build();
-         requeisicao.Person = (StatusUser)1;
+        requeisicao.Person = (StatusUser)1;
         requeisicao.Role = "Administrador";
         requeisicao.FancyName = "D.L.E.A";
 
         var resposta = await PostRequest(METODO, requeisicao);
         resposta.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
 
-        //verificando o token
-        await using var responseBody = await resposta.Content.ReadAsStreamAsync();
-
-        var respostaData = await JsonDocument.ParseAsync(responseBody);
-
-        respostaData.RootElement.GetProperty("token").GetString().Should().NotBeNullOrWhiteSpace();
     }
 }

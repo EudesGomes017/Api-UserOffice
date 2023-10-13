@@ -11,7 +11,8 @@ public class User
     public string? Password { get; set; }
     public string? Email { get; set; }
     public string FancyName { get; set; }
-    public string Documento { get; set; }
+    public string? Documento { get; set; }
+    public bool? IsActive { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdateAt { get; set; }
     public StatusUser Person { get; set; }

@@ -60,6 +60,7 @@ namespace Data.Migrations
                     Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     FancyName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Documento = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", maxLength: 255, nullable: false),
                     UpdateAt = table.Column<DateTime>(type: "datetime2", maxLength: 255, nullable: false),
                     Person = table.Column<int>(type: "int", nullable: false)
@@ -224,6 +225,16 @@ namespace Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "Id", "CreatedAt", "Documento", "Email", "FancyName", "IsActive", "Name", "Password", "Person", "Role", "UpdateAt" },
+                values: new object[] { 1, new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4664), "100.100.100-19", "johndoe@gmail.com", "", true, "John 1", "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01", 0, "Administrador", new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4675) });
+
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "Id", "CreatedAt", "Documento", "Email", "FancyName", "IsActive", "Name", "Password", "Person", "Role", "UpdateAt" },
+                values: new object[] { 2, new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4864), "100.514.624-19", "johndo2@gmail.com", "", true, "John 2", "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01", 0, "Usuario", new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4864) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Address_UserId",

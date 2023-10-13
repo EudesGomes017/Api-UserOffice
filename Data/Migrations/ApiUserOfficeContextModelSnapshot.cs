@@ -137,6 +137,10 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("IsActive")
+                        .IsRequired()
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -161,6 +165,36 @@ namespace Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4664),
+                            Documento = "100.100.100-19",
+                            Email = "johndoe@gmail.com",
+                            FancyName = "",
+                            IsActive = true,
+                            Name = "John 1",
+                            Password = "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01",
+                            Person = 0,
+                            Role = "Administrador",
+                            UpdateAt = new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4675)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4864),
+                            Documento = "100.514.624-19",
+                            Email = "johndo2@gmail.com",
+                            FancyName = "",
+                            IsActive = true,
+                            Name = "John 2",
+                            Password = "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01",
+                            Person = 0,
+                            Role = "Usuario",
+                            UpdateAt = new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4864)
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

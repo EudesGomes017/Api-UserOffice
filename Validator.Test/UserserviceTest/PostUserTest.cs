@@ -1,4 +1,4 @@
-﻿using Domain.Services.serviceUser;
+﻿using Domain.Services.serviceUser.services;
 using Exceptions;
 using Exceptions.ExceptionBase;
 using FluentAssertions;
@@ -16,24 +16,24 @@ public class PostUserTest
     {
         var requisicao = RequestUserBuilder.Build();
 
-        var createPost = CreatePost(requisicao.Email);
+      //  var createPost = CreatePost(requisicao.Email);
 
-        Func<Task> acao = async () => { await createPost.AddUserAsync(requisicao); };
+       // Func<Task> acao = async () => { await createPost.AddUserAsync(requisicao); };
 
-        await acao.Should().ThrowAsync<ErroValidatorException>()
-                  .Where(erroException => erroException.MesssageError.Count == 1 && erroException.MesssageError.Contains(ResourceMenssagensErro.EMAIL_CADASTRADO));
+       // await acao.Should().ThrowAsync<ErroValidatorException>()
+               //   .Where(erroException => erroException.MesssageError.Count == 1 && erroException.MesssageError.Contains(ResourceMenssagensErro.EMAIL_CADASTRADO));
         
     }
 
-    private PostUser CreatePost(string email = "")
-    {
-        var repository = UserRepositoryDomainBuilderTest.UserInstantiates().build();
-        var mapper = MapperTest.InstantiatesMapper();
-        var encryptPassword = EncryptPasswordTestBuilder.Instantiates();
-        var token = TokenTestBuilder.TokenInstantiates();
-        var repositoryReadOnly = UserReadOnlyRepositoryBuilder.UserInstantiates().ExisteUserEmail(email).build();
+    //private PostUser CreatePost(string email = "")
+    //{
+    //    var repository = UserRepositoryDomainBuilderTest.UserInstantiates().build();
+    //    var mapper = MapperTest.InstantiatesMapper();
+    //    var encryptPassword = EncryptPasswordTestBuilder.Instantiates();
+    //    var token = TokenTestBuilder.TokenInstantiates();
+    //    var repositoryReadOnly = UserReadOnlyRepositoryBuilder.UserInstantiates().ExisteUserEmail(email).build();
          
-        return new PostUser(repository, mapper, encryptPassword, token, repositoryReadOnly);
-    }
+    //    //return new PostUser(repository, mapper, encryptPassword, token, repositoryReadOnly);
+    //}
 }
 

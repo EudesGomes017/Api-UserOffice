@@ -8,7 +8,7 @@ using Exceptions.ExceptionBase;
 
 namespace Domain.Services.serviceUser.AuthUser;
 
-public class AuthUser : IAuthUser
+public class LoginUser : ILoginUser
 {
 
     private readonly IUserRepositoryDomain _userRepositoryDomain;
@@ -16,7 +16,7 @@ public class AuthUser : IAuthUser
     private readonly EncryptPassword _encryptPassword;
     private readonly TokenController _tokenController;
 
-    public AuthUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword, TokenController tokenController)
+    public LoginUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword, TokenController tokenController)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _mapper = mapper;
@@ -24,9 +24,8 @@ public class AuthUser : IAuthUser
         _tokenController = tokenController;
     }
 
-    public async Task<Object> UserByEmailAsync(AuthDto userLogin)
+    public async Task<Object> UserByEmailAsync(LoginUserDto userLogin)
     {
-
         var token = "";
 
         try
@@ -40,7 +39,7 @@ public class AuthUser : IAuthUser
 
                 if (Password == result.Password)
                 {
-                   // token = _tokenController.GerarToken(result);
+                   token = _tokenController.GerarToken(result);
                 }
 
             }
@@ -53,6 +52,6 @@ public class AuthUser : IAuthUser
             throw ex;
         }
 
-        throw new ErroValidatorException(new List<string> { ResourceMenssagensErro.BUSCA_ID_EMAIL });
+        throw new ErroValidatorException(new List<string> { ResourceMenssagensErro.USER_FAIL_LOGIN });
     }
 }

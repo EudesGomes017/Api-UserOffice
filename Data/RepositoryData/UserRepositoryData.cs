@@ -44,7 +44,18 @@ public class UserRepositoryData : GeralRepositoryData, IUserRepositoryDomain
 
                      .Where(x => x.Documento == document);
 
-        return await query.SingleOrDefaultAsync();
+        return await query.FirstOrDefaultAsync();
+    }
+
+    public async Task<User> UserPassword(string? password)
+    {
+        IQueryable<User> query = _apiUserOfficeContext.User;
+
+        query = query.AsNoTracking()
+
+                     .Where(x => x.Password == password);
+
+        return await query.FirstOrDefaultAsync();
     }
 
     public async Task<User> UserByIdAsync(int? id)
