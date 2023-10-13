@@ -1,42 +1,57 @@
 ﻿using AutoMapper;
 using Domain.Dto;
 using Domain.Interface.RepositoryDomain;
+using Domain.Models;
 using Domain.Services.serviceUser.InterfaceUsersServices;
 using Domain.Token;
 
-namespace Domain.Services.serviceUser;
+namespace Domain.Services.serviceUser.services.SharedUser;
 
 public class UserEamil : ISearchEamil
 {
 
     private readonly IUserRepositoryDomain _userRepositoryDomain;
     private readonly IMapper _mapper;
-    private readonly TokenController _tokenController;
+    
 
-    public UserEamil(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, TokenController tokenController)
+    public UserEamil(IUserRepositoryDomain userRepositoryDomain, IMapper mapper)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _mapper = mapper;
-        _tokenController = tokenController;
+
     }
 
     public async Task<bool> SearchrEmail(string email)
     {
-        bool user;
-
         try
         {
-            
-            var result = await _userRepositoryDomain.UserByEmailAsync(email);
-            user = _mapper.Map<bool>(result);
 
-            return user;
+            var result = await _userRepositoryDomain.UserByEmailAsync(email);
+
+            return result != null;
+
         }
         catch (Exception ex)
         {
             throw ex;
         }
-     
+
+    }
+
+    public async Task<UserDto> BuscaEamil(string email)
+    {
+        UserDto user;
+
+        try
+        {
+            var result = await _userRepositoryDomain.UserByEmailAsync(email);
+            user = _mapper.Map<UserDto>(result);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        return user;
 
     }
 
@@ -45,7 +60,7 @@ public class UserEamil : ISearchEamil
         throw new NotImplementedException();
     }
 
-    
+
 }
 
 

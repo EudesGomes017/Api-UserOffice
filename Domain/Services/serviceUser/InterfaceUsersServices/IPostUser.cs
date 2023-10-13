@@ -6,7 +6,7 @@ namespace Domain.Services.serviceUser.InterfaceUsersServices
 {
     public interface IPostUser
     {
-        Task<ReplyJsonRegisteredUser> AddUserAsync(UserDto modelUser);
+        Task<User> AddUserAsync(UserDto modelUser);
       
     }
 }

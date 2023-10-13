@@ -106,6 +106,15 @@ namespace Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Número do documento já existe  Porfavor informe um novo!.
+        /// </summary>
+        public static string DOCUMENTO_EXISTE {
+            get {
+                return ResourceManager.GetString("DOCUMENTO_EXISTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Número do Documento está invalido!.
         /// </summary>
         public static string DOCUMENTO_INVALIDO {
@@ -192,6 +201,15 @@ namespace Exceptions {
         public static string PASSWORD_CARACTER {
             get {
                 return ResourceManager.GetString("PASSWORD_CARACTER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail ou Password existe, tente novamente!.
+        /// </summary>
+        public static string PASSWORD_EXISTE {
+            get {
+                return ResourceManager.GetString("PASSWORD_EXISTE", resourceCulture);
             }
         }
         

@@ -132,6 +132,9 @@
   <data name="DELETE_USER" xml:space="preserve">
     <value>Erro ao deletar o usuário !</value>
   </data>
+  <data name="DOCUMENTO_EXISTE" xml:space="preserve">
+    <value>Número do documento já existe  Porfavor informe um novo!</value>
+  </data>
   <data name="DOCUMENTO_INVALIDO" xml:space="preserve">
     <value>Número do Documento está invalido!</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="PASSWORD_CARACTER" xml:space="preserve">
     <value>Password faltando caracter!</value>
+  </data>
+  <data name="PASSWORD_EXISTE" xml:space="preserve">
+    <value>E-mail ou Password existe, tente novamente!</value>
   </data>
   <data name="PHONE_INVALIDO" xml:space="preserve">
     <value>Número do telefone inválido !</value>

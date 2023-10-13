@@ -20,18 +20,18 @@ public class TokenController
         _chaveDeSeguranca = chaveDeSeguranca;
     }
 
-    public string GerarToken(string user)
+    public string GerarToken(User user)
     {
         var claims = new List<Claim>
         {
-                  
-                   //new Claim(ClaimTypes.Email, user.Email),
-                   //new Claim(ClaimTypes.Name, user.Name),
-                   //new Claim(ClaimTypes.Role, user.Role)
 
-                    new Claim(EmailAlias, user),
-                    new Claim(NameAlias, user),
-                    new Claim(RoleAlias, user)
+                   new Claim(ClaimTypes.Email, user.Email),
+                   new Claim(ClaimTypes.Name, user.Name),
+                   new Claim(ClaimTypes.Role, user.Role)
+
+                    //new Claim(EmailAlias, user),
+                    //new Claim(NameAlias, user),
+                    //new Claim(RoleAlias, user)
 
             };
 

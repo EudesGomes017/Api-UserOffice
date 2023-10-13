@@ -2,9 +2,10 @@ using Data;
 using Data.Context;
 using Data.RepositoryData;
 using Domain.Interface.RepositoryDomain;
-using Domain.Services.serviceUser;
 using Domain.Services.serviceUser.AuthUser;
 using Domain.Services.serviceUser.InterfaceUsersServices;
+using Domain.Services.serviceUser.services;
+using Domain.Services.serviceUser.services.SharedUser;
 using Exceptions.ExceptionBase;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +23,7 @@ namespace Api_UserOffice
 
             var builder = WebApplication.CreateBuilder(args);
 
-           
+
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -63,9 +64,15 @@ namespace Api_UserOffice
 
             builder.Services.AddScoped<IPostUser, PostUser>();
             builder.Services.AddScoped<ISearchEamil, UserEamil>();
+            builder.Services.AddScoped<IVerificarDocumento, VerificarDocumento>();
 
-            builder.Services.AddScoped<IAuthUser, AuthUser>();
+            builder.Services.AddScoped<IGetUser, GetUser>();
+            builder.Services.AddScoped<IUserUp, UserUp>();
+            builder.Services.AddScoped<IDeleteUser, DeleteUser>();
+
+            builder.Services.AddScoped<ILoginUser, LoginUser>();
             builder.Services.AddScoped<IUserRepositoryDomain, UserRepositoryData>();
+            builder.Services.AddScoped<IVerificaPassWord, VerificaPassWord>();
 
             builder.Services.AddScoped<IDepartmentDomain, DepartmentrRepositoryData>();
             builder.Services.AddScoped<IGeralRepositoryDomain, GeralRepositoryData>();
