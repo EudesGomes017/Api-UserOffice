@@ -33,15 +33,16 @@ public class LoginUser : ILoginUser
             var result = await _userRepositoryDomain.UserByEmailAsync(userLogin.Email);
 
 
-            if (result != null)
+            if (result == null)
             {
-                var Password =  _encryptPassword.encrypt(userLogin.Password);
+                throw new LoginInvalideException();
+            }
 
-                if (Password == result.Password)
-                {
-                   token = _tokenController.GerarToken(result);
-                }
+            var Password = _encryptPassword.encrypt(userLogin.Password);
 
+            if (Password == result.Password)
+            {
+                token = _tokenController.GerarToken(result);
             }
 
             return new { Id = result.Id, Name = result.Name, Email = result.Email, Token = token };
@@ -49,9 +50,9 @@ public class LoginUser : ILoginUser
 
         catch (ErroValidatorException ex)
         {
-            throw ex;
+            throw ex; 
         }
 
-        throw new ErroValidatorException(new List<string> { ResourceMenssagensErro.USER_FAIL_LOGIN });
+       
     }
 }

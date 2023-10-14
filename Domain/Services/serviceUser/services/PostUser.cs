@@ -45,6 +45,8 @@ public class PostUser : IPostUser
 
             await _userRepositoryDomain.SalvarMudancasAsync();
 
+            result.Password = "";
+
             return result;
         }
 

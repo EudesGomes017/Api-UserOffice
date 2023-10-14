@@ -1,7 +1,6 @@
 using Domain.Dto;
 using Domain.Services.serviceUser.InterfaceUsersServices;
 using Exceptions.ExceptionBase;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api_UserOffice.Controllers
@@ -18,22 +17,22 @@ namespace Api_UserOffice.Controllers
             _getUser1 = getUser;
         }
 
-        [Authorize(Roles = "Administrador")]
+        // [Authorize(Roles = "Administrador")]
         [HttpPost(Name = "Adcionar Usuário")]
         public async Task<IActionResult> Post([FromServices] IPostUser userService, UserDto model)
         {
-            
+
             var user = await userService.AddUserAsync(model);
             if (user.IsActive == true)
             {
                 return this.StatusCode(StatusCodes.Status201Created, user);
             }
-  
+
             throw new ErroValidatorException(new List<string> { "Coloborador Desativado" });
 
         }
 
-       // [Authorize(Roles = "Administrador")]
+        // [Authorize(Roles = "Administrador")]
         [HttpGet(Name = "Buscar todos os Usuarios")]
         public async Task<IActionResult> Get([FromServices] IGetUser userService)
         {
@@ -41,7 +40,7 @@ namespace Api_UserOffice.Controllers
             return this.StatusCode(StatusCodes.Status200OK, users);
         }
 
-       // [Authorize(Roles = "Administrador")]
+        // [Authorize(Roles = "Administrador")]
         [HttpGet("{id}", Name = "Buscar usuário pelo ID")]
         public async Task<IActionResult> Get([FromServices] IGetUser userService, int id)
         {
@@ -49,23 +48,14 @@ namespace Api_UserOffice.Controllers
             return this.StatusCode(StatusCodes.Status200OK, user);
         }
 
-      //  [Authorize(Roles = "Administrador")]
+        //  [Authorize(Roles = "Administrador")]
         [HttpGet("Buscar/{email}", Name = "Buscar usuário pelo email")]
         public async Task<IActionResult> GetEmail([FromServices] ISearchEamil userService, string email)
         {
 
             var user = await userService.BuscaEamil(email);
+            return this.StatusCode(StatusCodes.Status200OK, user);
 
-            if (user != null)
-            {
-
-                return this.StatusCode(StatusCodes.Status200OK, user);
-
-            }
-            else
-            {
-                throw new Exception("teste");
-            }
         }
 
         //[Authorize(Roles = "Administrador")]
@@ -74,7 +64,7 @@ namespace Api_UserOffice.Controllers
         {
             var updatedUser = await userService.UpUserAsync(modelUser);
 
-            if (updatedUser != null && updatedUser.Id == modelUser.Id && updatedUser.IsActive  != true) // Verifique se o usuário foi atualizado e o ID corresponde
+            if (updatedUser != null && updatedUser.Id == modelUser.Id) // Verifique se o usuário foi atualizado e o ID corresponde
             {
                 return this.StatusCode(StatusCodes.Status200OK, updatedUser);
             }
@@ -84,7 +74,14 @@ namespace Api_UserOffice.Controllers
             }
         }
 
-        
+        [HttpPut("AtualizarStatus/{email}", Name = "Atulizar Status")]
+        public async Task<IActionResult> PutStatus([FromServices] IUserUp userService, string email)
+        {
+            var updatedUser = await userService.IsActiveUserAsync(email);
+            return this.StatusCode(StatusCodes.Status200OK, updatedUser);
+        }
+
+
         [HttpDelete("{id}", Name = "Deletar usuário pelo ID")]
         public async Task<IActionResult> Delete([FromServices] IDeleteUser userService, int id)
         {

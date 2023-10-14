@@ -19,6 +19,7 @@ public class UserUp : IUserUp
         _mapper = mapper;
         _getUser = getUser;
     }
+
     public async Task<UserDto> UpUserAsync(UserDto modelUser)
     {
         try
@@ -42,5 +43,30 @@ public class UserUp : IUserUp
             throw;
         }
 
+    }
+
+    public async Task<string> IsActiveUserAsync(string email)
+    {
+        try
+        {
+            var user = await _userRepositoryDomain.UserByEmailAsync(email);
+
+            if (user != null)
+            {
+
+                user.UpdateAt = DateTime.Now;
+                user.IsActive = !user.IsActive;
+                _userRepositoryDomain.Atualizar(user);
+                await _userRepositoryDomain.SalvarMudancasAsync();
+                var statusCurrent = (bool)user.IsActive ? "Ativo" : "Inativo";
+                return  $"Status do Usuário {statusCurrent}";
+            }
+            throw new Exception("Erro ao atualizar");
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
     }
 }
