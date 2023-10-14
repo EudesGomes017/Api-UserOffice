@@ -25,6 +25,11 @@ public class GetUser : IGetUser
         {
             var result = await _userRepositoryDomain.AllUsersAsync();
             user = _mapper.Map<UserDto[]>(result);
+
+            foreach (var item in user)
+            {
+                item.Password = "";
+            }
         }
         catch (Exception ex)
         {

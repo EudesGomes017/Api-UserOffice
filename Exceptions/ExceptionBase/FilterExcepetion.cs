@@ -24,6 +24,10 @@ public class FilterExcepetion : IExceptionFilter
         {
             ProcessErroValidatorException(context);
         }
+        else if(context.Exception is LoginInvalideException)
+        {
+            LoginErroValidatorException(context);
+        }
     }
 
     private void ProcessErroValidatorException(ExceptionContext context)
@@ -35,6 +39,14 @@ public class FilterExcepetion : IExceptionFilter
             context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
         }
         context.Result = new ObjectResult(new ResponseErroJson(erroValidatorException.MesssageError));
+    }
+
+    private void LoginErroValidatorException(ExceptionContext context)
+    {
+        var erroLogin = context.Exception as LoginInvalideException;
+        context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+        context.Result = new ObjectResult(new ResponseErroJson(erroLogin.Message));
+
     }
 
     private void SendMessageErroUnknown(ExceptionContext context)

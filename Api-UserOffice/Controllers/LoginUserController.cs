@@ -12,14 +12,7 @@ public class LoginUserController : ControllerBase
     [HttpPost(Name = "Logar no sistema")]
     public async Task<IActionResult> Authentication([FromServices] ILoginUser userRepositoryDomain, Domain.Dto.LoginUserDto user)
     {
-        var userFind = await userRepositoryDomain.UserByEmailAsync(user);
-            
-
-        if (userFind == null)
-        {
-            return this.StatusCode(StatusCodes.Status401Unauthorized, new { messages = ResourceMenssagensErro.USER_FAIL_LOGIN });
-
-        }
+        var userFind = await userRepositoryDomain.UserByEmailAsync(user);           
 
             return this.StatusCode(StatusCodes.Status200OK, userFind);
         
