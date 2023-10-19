@@ -23,6 +23,7 @@ public class PostUserIntegracao : ControllerBase
         requeisicao.Person = (StatusUser)1;
         requeisicao.Role = "Administrador";
         requeisicao.FancyName = "D.L.E.A";
+        requeisicao.IsActive = true;
 
         var resposta = await PostRequest(METODO, requeisicao);
         resposta.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);

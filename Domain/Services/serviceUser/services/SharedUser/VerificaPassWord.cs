@@ -10,12 +10,12 @@ public class VerificaPassWord : IVerificaPassWord
     {
         _userRepositoryDomain = userRepositoryDomain;
     }
-    public async Task<bool> SearchrDocument(string document)
+    public async Task<bool> SearchrDocument(string password)
     {
         try
         {
 
-            var result = await _userRepositoryDomain.UserPassword(document);
+            var result = await _userRepositoryDomain.UserPassword(password);
 
             return result != null;
 

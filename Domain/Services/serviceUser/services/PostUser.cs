@@ -15,13 +15,14 @@ public class PostUser : IPostUser
 {
     private readonly IUserRepositoryDomain _userRepositoryDomain;
     private readonly IMapper _mapper;
-    private readonly EncryptPassword _encryptPassword;
-    private readonly IVerificaPassWord _verificaPassWord;
+    private readonly EncryptPassword _encryptPassword; 
     private readonly ISearchEamil _searchEamil;
     private readonly IVerificarDocumento _verificarDocumento;
+    private readonly IVerificaPassWord _verificaPassWord;
+
 
     public PostUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword,
-        IVerificaPassWord verificaPassWord, ISearchEamil searchEamil, IVerificarDocumento verificarDocumento)
+         ISearchEamil searchEamil, IVerificarDocumento verificarDocumento, IVerificaPassWord verificaPassWord)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _mapper = mapper;
@@ -29,6 +30,7 @@ public class PostUser : IPostUser
         _verificaPassWord = verificaPassWord;
         _searchEamil = searchEamil;
         _verificarDocumento = verificarDocumento;
+
     }
 
     public async Task<User> AddUserAsync(UserDto user)

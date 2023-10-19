@@ -208,4 +208,3 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\runtime
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\net6.0\Dapper.dll
-C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\obj\Debug\net6.0\Api-UserOffice.MvcApplicationPartsAssemblyInfo.cs
