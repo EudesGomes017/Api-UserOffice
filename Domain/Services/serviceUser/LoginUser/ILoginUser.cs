@@ -4,6 +4,6 @@ namespace Domain.Services.serviceUser.AuthUser
 {
     public interface ILoginUser
     {
-        Task<object> UserByEmailAsync(Dto.LoginUserDto userLogin);
+        Task<object> UserByEmailAsync(LoginUserDto userLogin);
     }
 }

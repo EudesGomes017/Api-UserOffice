@@ -1,4 +1,6 @@
-﻿namespace Domain.Dto;
+﻿using Domain.Services.serviceUser.AuthUser;
+
+namespace Domain.Dto;
 
 public class LoginUserDto
 {

@@ -1,5 +1,4 @@
 ﻿using Domain.Dto;
-using Domain.Models;
 
 namespace Domain.Services.serviceUser.InterfaceUsersServices;
 

@@ -1,12 +1,13 @@
 using Domain.Dto;
 using Domain.Services.serviceUser.InterfaceUsersServices;
 using Exceptions.ExceptionBase;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;   
 
 namespace Api_UserOffice.Controllers
 {
     [Route("[controller]")]
-    [ApiController]
+    [ApiController]    
     public class UserController : ControllerBase
     {
 
@@ -17,7 +18,7 @@ namespace Api_UserOffice.Controllers
             _getUser1 = getUser;
         }
 
-        // [Authorize(Roles = "Administrador")]
+        //[Authorize(Roles = "Administrador")]
         [HttpPost(Name = "Adcionar Usuário")]
         public async Task<IActionResult> Post([FromServices] IPostUser userService, UserDto model)
         {
