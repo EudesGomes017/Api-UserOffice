@@ -5,7 +5,7 @@ using FluentAssertions;
 using Validator.Test.UtilsTeste;
 using Xunit;
 
-namespace Validator.Test
+namespace Validator.Test.V1.UserTesteIntegracao.PostUserIntegracao
 {
     public class RegisterUserValidatorTest
     {
@@ -29,7 +29,7 @@ namespace Validator.Test
 
             var validator = new RegisterUserValidator();
             var request = RequestUserBuilder.Build();
-           request.Email = string.Empty;
+            request.Email = string.Empty;
 
             var result = validator.Validate(request);
             result.IsValid.Should().BeFalse();
@@ -51,7 +51,7 @@ namespace Validator.Test
         [Fact]
         public void Validator_Erro_DocumentInvalid()
         {
-            
+
             var validator = new RegisterUserValidator();
             var request = RequestUserBuilder.Build();
             request.Documento = "10000000000";
