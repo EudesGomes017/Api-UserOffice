@@ -69,9 +69,9 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.AspN
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Newtonsoft.Json.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Newtonsoft.Json.Bson.dll
-C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Protocols.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\appsettings.Test.json
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.OpenApi.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Protocols.dll

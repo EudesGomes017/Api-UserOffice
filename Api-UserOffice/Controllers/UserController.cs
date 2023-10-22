@@ -1,8 +1,7 @@
 using Domain.Dto;
 using Domain.Services.serviceUser.InterfaceUsersServices;
 using Exceptions.ExceptionBase;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;   
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api_UserOffice.Controllers
 {

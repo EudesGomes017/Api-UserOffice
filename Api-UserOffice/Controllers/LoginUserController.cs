@@ -10,7 +10,7 @@ namespace Api_UserOffice.Controllers;
 public class LoginUserController : ControllerBase
 {
     [HttpPost(Name = "Logar no sistema")]
-    public async Task<IActionResult> Authentication([FromServices] ILoginUser userRepositoryDomain, Domain.Dto.LoginUserDto user)
+    public async Task<IActionResult> Authentication([FromServices] ILoginUser userRepositoryDomain, LoginUserDto user)
     {
         var userFind = await userRepositoryDomain.UserByEmailAsync(user);           
 

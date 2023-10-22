@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ApiUserOfficeContext))]
-    [Migration("20231013133427_initial")]
+    [Migration("20231022212406_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -172,7 +172,7 @@ namespace Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4664),
+                            CreatedAt = new DateTime(2023, 10, 22, 18, 24, 5, 979, DateTimeKind.Local).AddTicks(8424),
                             Documento = "100.100.100-19",
                             Email = "johndoe@gmail.com",
                             FancyName = "",
@@ -181,12 +181,12 @@ namespace Data.Migrations
                             Password = "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01",
                             Person = 0,
                             Role = "Administrador",
-                            UpdateAt = new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4675)
+                            UpdateAt = new DateTime(2023, 10, 22, 18, 24, 5, 979, DateTimeKind.Local).AddTicks(8440)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4864),
+                            CreatedAt = new DateTime(2023, 10, 22, 18, 24, 5, 979, DateTimeKind.Local).AddTicks(8631),
                             Documento = "100.514.624-19",
                             Email = "johndo2@gmail.com",
                             FancyName = "",
@@ -195,7 +195,7 @@ namespace Data.Migrations
                             Password = "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01",
                             Person = 0,
                             Role = "Usuario",
-                            UpdateAt = new DateTime(2023, 10, 13, 10, 34, 26, 984, DateTimeKind.Local).AddTicks(4864)
+                            UpdateAt = new DateTime(2023, 10, 22, 18, 24, 5, 979, DateTimeKind.Local).AddTicks(8632)
                         });
                 });
 

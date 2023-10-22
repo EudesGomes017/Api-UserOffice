@@ -2,7 +2,6 @@
 using Exceptions;
 using Newtonsoft.Json;
 using System.Globalization;
-using System.Net.Http;
 using System.Text;
 using Xunit;
 

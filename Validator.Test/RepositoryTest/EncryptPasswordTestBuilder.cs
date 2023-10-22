@@ -1,6 +1,4 @@
-﻿using Domain.Interface.RepositoryDomain;
-using Domain.Services.serviceUser.Criptorgrafia;
-using Moq;
+﻿using Domain.Services.serviceUser.Criptorgrafia;
 
 namespace Validator.Test.RepositoryTest;
 
@@ -8,7 +6,7 @@ public class EncryptPasswordTestBuilder
 {
     public static EncryptPassword Instantiates()
     {
-        return  new EncryptPassword("abc123");
+        return  new EncryptPassword("vJyf-9$27j#0");
 
     }
 
