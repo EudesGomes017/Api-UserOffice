@@ -1,4 +1,3 @@
-using Domain.Validators.StrategyDocument;
 using Domain.Validators.ValidatorUser;
 using Exceptions;
 using FluentAssertions;
@@ -11,7 +10,7 @@ namespace Validator.Test.V1.UserTesteIntegracao.PostUserIntegracao
     {
 
         [Fact]
-        public void Validator_Erro_NameVazioEmpty()
+        public void Validate_Erro_NameEmpty()
         {
 
             var validator = new RegisterUserValidator();
@@ -24,7 +23,7 @@ namespace Validator.Test.V1.UserTesteIntegracao.PostUserIntegracao
         }
 
         [Fact]
-        public void Validator_Erro_EmailVazioEmpty()
+        public void Validate_Erro_EmailEmpty()
         {
 
             var validator = new RegisterUserValidator();
@@ -37,7 +36,7 @@ namespace Validator.Test.V1.UserTesteIntegracao.PostUserIntegracao
         }
 
         [Fact]
-        public void Validator_Erro_PasswordVazioEmpty()
+        public void Validate_Erro_PasswordEmpty()
         {
             var validator = new RegisterUserValidator();
             var request = RequestUserBuilder.Build();
@@ -49,12 +48,12 @@ namespace Validator.Test.V1.UserTesteIntegracao.PostUserIntegracao
         }
 
         [Fact]
-        public void Validator_Erro_DocumentInvalid()
+        public void Validate_Erro_DocumentInvalid()
         {
 
             var validator = new RegisterUserValidator();
             var request = RequestUserBuilder.Build();
-            request.Documento = "10000000000";
+            request.Document = "10000000000";
 
             var result = validator.Validate(request);
             result.IsValid.Should().BeFalse();
@@ -67,11 +66,11 @@ namespace Validator.Test.V1.UserTesteIntegracao.PostUserIntegracao
         [InlineData(3)]
         [InlineData(4)]
         [InlineData(5)]
-        public void Validator_Erro_PasswordInvalid(int tamanhoSenha)
+        public void Validate_Erro_PasswordInvalid(int sizePassword)
         {
 
             var validator = new RegisterUserValidator();
-            var request = RequestUserBuilder.Build(tamanhoSenha);
+            var request = RequestUserBuilder.Build(sizePassword);
 
             var result = validator.Validate(request);
             Assert.False(result.IsValid);

@@ -44,10 +44,15 @@ public class LoginUser : ILoginUser
 
             if (Password == result.Password)
             {
-                token = _tokenController.GerarToken(result);
+                token = _tokenController.GenerateToken(result);
             }
 
-            return new { Id = result.Id, Name = result.Name, Email = result.Email, Token = token, Password = Password};
+
+
+            return new { Id = result.Id, Name = result.Name, Email = result.Email, Token = token};
+
+             
+
         }
 
         catch (LoginInvalideException ex)

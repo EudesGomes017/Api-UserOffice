@@ -5,7 +5,7 @@ using Domain.Token;
 
 namespace Domain.Services.serviceUser.services.SharedUser;
 
-public class VerificarDocumento : IVerificarDocumento
+public class VerificarDocumento : IVerifyDocument
 {
     private readonly IUserRepositoryDomain _userRepositoryDomain;
 

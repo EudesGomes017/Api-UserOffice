@@ -159,6 +159,9 @@
   <data name="NOT_FOUND" xml:space="preserve">
     <value>Sem registro na base de dados</value>
   </data>
+  <data name="NOVO_PASSWORD_INVALID" xml:space="preserve">
+    <value>Password não atualziado!</value>
+  </data>
   <data name="PASSWORD_BRANCO" xml:space="preserve">
     <value>Password vazio!</value>
   </data>
@@ -171,7 +174,13 @@
   <data name="PHONE_INVALIDO" xml:space="preserve">
     <value>Número do telefone inválido !</value>
   </data>
+  <data name="TOKEN_EXPIRADO" xml:space="preserve">
+    <value>Token Expirado!</value>
+  </data>
   <data name="USER_FAIL_LOGIN" xml:space="preserve">
     <value>Erro ao informar o Login</value>
+  </data>
+  <data name="USER_WITHOUT_PERMISE" xml:space="preserve">
+    <value>Usuário sem permissão!</value>
   </data>
 </root>

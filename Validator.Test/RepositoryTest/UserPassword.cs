@@ -1,4 +1,4 @@
-﻿using Domain.Services.serviceUser.services.SharedUser;
+﻿using Domain.Services.serviceUser.InterfaceUsersServices;
 using Moq;
 
 namespace Validator.Test.RepositoryTest;
@@ -6,13 +6,13 @@ namespace Validator.Test.RepositoryTest;
 public class UserPassword
 {
     private static UserPassword _intance;
-    private readonly Mock<IVerificaPassWord> _IVerificaPassWord;
+    private readonly Mock<IVerifyPassWord> _IVerifyPassWord;
 
     private UserPassword()
     {
-        if (_IVerificaPassWord == null)
+        if (_IVerifyPassWord == null)
         {
-            _IVerificaPassWord = new Mock<IVerificaPassWord>();
+            _IVerifyPassWord = new Mock<IVerifyPassWord>();
         }
     }
 
@@ -25,19 +25,19 @@ public class UserPassword
     public UserPassword ExistePassWord(string document)
     {
         if (!string.IsNullOrEmpty(document))
-            _IVerificaPassWord.Setup(i => i.SearchrDocument(document)).ReturnsAsync(true);
+            _IVerifyPassWord.Setup(i => i.SearchrPasssword(document)).ReturnsAsync(true);
 
         return this;
     }
     public UserPassword ExisteDocumentEmail(string document)
     {
         if (!string.IsNullOrEmpty(document))
-            _IVerificaPassWord.Setup(i => i.SearchrDocument(document)).ReturnsAsync(true);
+            _IVerifyPassWord.Setup(i => i.SearchrPasssword(document)).ReturnsAsync(true);
 
         return this;
     }
-    public IVerificaPassWord build()
+    public IVerifyPassWord build()
     {
-        return _IVerificaPassWord.Object;
+        return _IVerifyPassWord.Object;
     }
 }

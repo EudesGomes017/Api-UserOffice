@@ -7,9 +7,9 @@ public class StrategyValidatorCpf : IStrategyValidatoDocument
     {
         bool cpfValido = false;
 
-        int dv1 = CalcularDigitoVerificadorCpf(document.Substring(0, 9));
+        int dv1 = CalculateVerifierDigitCpf(document.Substring(0, 9));
 
-        int dv2 = CalcularDigitoVerificadorCpf(document.Substring(0, 9) + dv1);
+        int dv2 = CalculateVerifierDigitCpf(document.Substring(0, 9) + dv1);
 
         // Passo 5: Compare os dígitos verificadores calculados com os dígitos originais
         if (dv1 == int.Parse(document[9].ToString()) && dv2 == int.Parse(document[10].ToString()))
@@ -21,7 +21,7 @@ public class StrategyValidatorCpf : IStrategyValidatoDocument
     }
 
     //cpf
-    private static int CalcularDigitoVerificadorCpf(string parteCpf)
+    private static int CalculateVerifierDigitCpf(string parteCpf)
     {
         int soma = 0;
         for (int i = 0; i < parteCpf.Length; i++)

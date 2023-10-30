@@ -1,9 +1,11 @@
+using Api_UserOffice.filter.api;
 using Data;
 using Data.Context;
 using Data.RepositoryData;
 using Domain.Interface.RepositoryDomain;
 using Domain.Services.serviceUser.AuthUser;
 using Domain.Services.serviceUser.InterfaceUsersServices;
+using Domain.Services.serviceUser.loggedInUser;
 using Domain.Services.serviceUser.services;
 using Domain.Services.serviceUser.services.SharedUser;
 using Exceptions.ExceptionBase;
@@ -18,6 +20,7 @@ namespace Api_UserOffice
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
 
@@ -36,6 +39,8 @@ namespace Api_UserOffice
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             builder.Services.AddApplication(builder.Configuration);
+
+            builder.Services.AddHttpContextAccessor(); // 
 
 
             if (builder.Configuration.GetValue<bool>("ConfigurationMemory:BancoDeDadosInMemory"))
@@ -64,7 +69,8 @@ namespace Api_UserOffice
 
             builder.Services.AddScoped<IPostUser, PostUser>();
             builder.Services.AddScoped<ISearchEamil, UserEamil>();
-            builder.Services.AddScoped<IVerificarDocumento, VerificarDocumento>();
+            builder.Services.AddScoped<IVerifyDocument, VerificarDocumento>();
+            builder.Services.AddScoped<IloggedInUser, loggedInUser>();
 
             builder.Services.AddScoped<IGetUser, GetUser>();
             builder.Services.AddScoped<IUserUp, UserUp>();
@@ -72,11 +78,10 @@ namespace Api_UserOffice
 
             builder.Services.AddScoped<ILoginUser, LoginUser>();
             builder.Services.AddScoped<IUserRepositoryDomain, UserRepositoryData>();
-            builder.Services.AddScoped<IVerificaPassWord, VerificaPassWord>();
+            builder.Services.AddScoped<IVerifyPassWord, VerificaPassWord>();
 
             builder.Services.AddScoped<IDepartmentDomain, DepartmentrRepositoryData>();
             builder.Services.AddScoped<IGeralRepositoryDomain, GeralRepositoryData>();
-
 
             // Add services to the container.
             builder.Services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
@@ -156,6 +161,7 @@ namespace Api_UserOffice
             });
 
             builder.Services.AddMvc(optins => optins.Filters.Add(typeof(FilterExcepetion)));
+            builder.Services.AddScoped<UserAuthentication>();
 
             var app = builder.Build();
 

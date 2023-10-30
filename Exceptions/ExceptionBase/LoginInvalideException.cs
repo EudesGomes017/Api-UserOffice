@@ -1,6 +1,6 @@
 ﻿namespace Exceptions.ExceptionBase
 {
-    public class LoginInvalideException : SistemaTaskException
+    public class LoginInvalideException : SystemTaskException
     {
         public LoginInvalideException() : base(ResourceMenssagensErro.USER_FAIL_LOGIN)
         {

@@ -1,4 +1,5 @@
 ﻿using Domain.Dto;
+using Domain.Services.serviceUser.loggedInUser;
 using Domain.Validators.StrategyDocument;
 using Exceptions;
 using FluentValidation;
@@ -18,6 +19,8 @@ public class RegisterUserValidator : AbstractValidator<UserDto>
         {
             RuleFor(e => e.Email).EmailAddress().WithMessage(ResourceMenssagensErro.EMAIL_INVALIDO);
         });
+
+       // RuleFor(e => e.Password).SetValidator(new PasswordValidate());
         RuleFor(p => p.Password).NotEmpty().WithMessage(ResourceMenssagensErro.PASSWORD_BRANCO);
 
         When(p => !string.IsNullOrWhiteSpace(p.Password), () =>
@@ -25,17 +28,17 @@ public class RegisterUserValidator : AbstractValidator<UserDto>
             RuleFor(p => p.Password.Length).GreaterThanOrEqualTo(6).WithMessage(ResourceMenssagensErro.PASSWORD_CARACTER);
         });
 
-        RuleFor(x => x.Documento)
+        RuleFor(x => x.Document)
             .NotEmpty()
             .WithMessage(ResourceMenssagensErro.DOCUMENTO_INVALIDO);
 
         /// função de validação customizada, para a propriedade documento
-        When(p => !string.IsNullOrWhiteSpace(p.Documento), () =>
+        When(p => !string.IsNullOrWhiteSpace(p.Document), () =>
         {
-            RuleFor(x => x.Documento)
+            RuleFor(x => x.Document)
           .Must(ValidatorDocument)
           .WithMessage(ResourceMenssagensErro.DOCUMENTO_INVALIDO);
-            //RuleFor(p => p.Documento).Custom((documento, contexto) =>
+            //RuleFor(p => p.Document).Custom((documento, contexto) =>
             //{
 
             //    var IsMatch = Regex.IsMatch(documento, @"\D");

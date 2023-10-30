@@ -32,7 +32,6 @@
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <Folder Include="Services\ServiceAddresRegister\" />
     <Folder Include="Services\ServicesDepartment\" />
-    <Folder Include="Validators\ValidatorAddressRegister\" />
   </ItemGroup>
 
   <ItemGroup>

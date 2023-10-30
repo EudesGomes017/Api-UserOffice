@@ -4,7 +4,6 @@ using Domain.Interface.RepositoryDomain;
 using Domain.Models;
 using Domain.Services.serviceUser.Criptorgrafia;
 using Domain.Services.serviceUser.InterfaceUsersServices;
-using Domain.Services.serviceUser.services.SharedUser;
 using Domain.Validators.ValidatorUser;
 using Exceptions;
 using Exceptions.ExceptionBase;
@@ -17,19 +16,18 @@ public class PostUser : IPostUser
     private readonly IMapper _mapper;
     private readonly EncryptPassword _encryptPassword; 
     private readonly ISearchEamil _searchEamil;
-    private readonly IVerificarDocumento _verificarDocumento;
-    private readonly IVerificaPassWord _verificaPassWord;
-
+    private readonly IVerifyDocument _verifyDocumento;
+    private readonly IVerifyPassWord _verifyPassWord;
 
     public PostUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword,
-         ISearchEamil searchEamil, IVerificarDocumento verificarDocumento, IVerificaPassWord verificaPassWord)
+         ISearchEamil searchEamil, IVerifyDocument verifyDocumento, IVerifyPassWord verifyPassWord)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _mapper = mapper;
         _encryptPassword = encryptPassword;
-        _verificaPassWord = verificaPassWord;
+        _verifyPassWord = verifyPassWord;
         _searchEamil = searchEamil;
-        _verificarDocumento = verificarDocumento;
+        _verifyDocumento = verifyDocumento;
 
     }
 
@@ -63,29 +61,29 @@ public class PostUser : IPostUser
     {
 
         var validator = new RegisterUserValidator();
-        var resultado = validator.Validate(user);
+        var result = validator.Validate(user);
         var existUserEmail = await _searchEamil.SearchrEmail(user.Email);
-        var existDocument = await _verificarDocumento.SearchrDocument(user.Documento);
-        var existPassword = await _verificaPassWord.SearchrDocument(user.Password);
+        var existDocument = await _verifyDocumento.SearchrDocument(user.Document);
+        var existPassword = await _verifyPassWord.SearchrPasssword(user.Password);
 
         if (existUserEmail)
         {
-            resultado.Errors.Add(new FluentValidation.Results.ValidationFailure("email", ResourceMenssagensErro.EMAIL_CADASTRADO));
+            result.Errors.Add(new FluentValidation.Results.ValidationFailure("email", ResourceMenssagensErro.EMAIL_CADASTRADO));
         }
 
         if (existDocument)
         {
-            resultado.Errors.Add(new FluentValidation.Results.ValidationFailure("document", ResourceMenssagensErro.DOCUMENTO_EXISTE));
+            result.Errors.Add(new FluentValidation.Results.ValidationFailure("document", ResourceMenssagensErro.DOCUMENTO_EXISTE));
         }
 
         if (existDocument)
         {
-            resultado.Errors.Add(new FluentValidation.Results.ValidationFailure("password", ResourceMenssagensErro.PASSWORD_EXISTE));
+            result.Errors.Add(new FluentValidation.Results.ValidationFailure("password", ResourceMenssagensErro.PASSWORD_EXISTE));
         }
 
-        if (!resultado.IsValid)
+        if (!result.IsValid)
         {
-            var messageErro = resultado.Errors.Select(e => e.ErrorMessage).ToList();
+            var messageErro = result.Errors.Select(e => e.ErrorMessage).ToList();
             throw new ErroValidatorException(messageErro);
         }
     }

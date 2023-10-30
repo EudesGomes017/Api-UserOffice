@@ -25,7 +25,7 @@ public class UserReadLoginPasswordTest
         return _intance;
     }
 
-    public UserReadLoginPasswordTest RecuperarLoginSenha(User user)
+    public UserReadLoginPasswordTest RecoverLoginPassword(User user)
     {
             _IUserRepositoryDomain.Setup(i => i.UserByEmailAsync(user.Email)).ReturnsAsync(user);
             _IUserRepositoryDomain.Setup(i => i.UserByEmailAsync(user.Password)).ReturnsAsync(user);

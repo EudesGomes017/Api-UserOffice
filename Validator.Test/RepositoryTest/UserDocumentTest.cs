@@ -7,13 +7,13 @@ namespace Validator.Test.RepositoryTest;
 public class UserDocumentTest
 {
     private static UserDocumentTest _intance;
-    private readonly Mock<IVerificarDocumento> _IVerificaDocument;
+    private readonly Mock<IVerifyDocument> _IVerificaDocument;
 
     private UserDocumentTest()
     {
         if (_IVerificaDocument == null)
         {
-            _IVerificaDocument = new Mock<IVerificarDocumento>();
+            _IVerificaDocument = new Mock<IVerifyDocument>();
         }
     }
 
@@ -30,14 +30,14 @@ public class UserDocumentTest
 
         return this;
     }
-    public UserDocumentTest ExisteDocumentEmail(string document)
+    public UserDocumentTest ExistsDocumentEmail(string document)
     {
         if (!string.IsNullOrEmpty(document))
             _IVerificaDocument.Setup(i => i.SearchrDocument(document)).ReturnsAsync(true);
 
         return this;
     }
-    public IVerificarDocumento build()
+    public IVerifyDocument build()
     {
         return _IVerificaDocument.Object;
     }

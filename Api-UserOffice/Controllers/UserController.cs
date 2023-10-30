@@ -1,15 +1,16 @@
+using Api_UserOffice.filter.api;
 using Domain.Dto;
 using Domain.Services.serviceUser.InterfaceUsersServices;
 using Exceptions.ExceptionBase;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api_UserOffice.Controllers
 {
     [Route("[controller]")]
-    [ApiController]    
+    [ApiController]
     public class UserController : ControllerBase
     {
-
         private readonly IGetUser _getUser1;
 
         public UserController(IGetUser getUser)
@@ -18,7 +19,7 @@ namespace Api_UserOffice.Controllers
         }
 
         //[Authorize(Roles = "Administrador")]
-        [HttpPost(Name = "Adcionar Usuário")]
+        [HttpPost(Name = "Add User")]
         public async Task<IActionResult> Post([FromServices] IPostUser userService, UserDto model)
         {
 
@@ -28,12 +29,12 @@ namespace Api_UserOffice.Controllers
                 return this.StatusCode(StatusCodes.Status201Created, user);
             }
 
-            throw new ErroValidatorException(new List<string> { "Coloborador Desativado" });
+            throw new ErroValidatorException(new List<string> { "Coloborador Disabled" });
 
         }
 
         // [Authorize(Roles = "Administrador")]
-        [HttpGet(Name = "Buscar todos os Usuarios")]
+        [HttpGet(Name = "Search All Users")]
         public async Task<IActionResult> Get([FromServices] IGetUser userService)
         {
             var users = await userService.SearchAllUsersAsync();
@@ -41,7 +42,7 @@ namespace Api_UserOffice.Controllers
         }
 
         // [Authorize(Roles = "Administrador")]
-        [HttpGet("{id}", Name = "Buscar usuário pelo ID")]
+        [HttpGet("{id}", Name = "Search All Users ID")]
         public async Task<IActionResult> Get([FromServices] IGetUser userService, int id)
         {
             var user = await userService.SearchUserIdAsync(id);
@@ -49,7 +50,7 @@ namespace Api_UserOffice.Controllers
         }
 
         //  [Authorize(Roles = "Administrador")]
-        [HttpGet("Buscar/{email}", Name = "Buscar usuário pelo email")]
+        [HttpGet("Search/{email}", Name = "Search All Users E-mail")]
         public async Task<IActionResult> GetEmail([FromServices] ISearchEamil userService, string email)
         {
 
@@ -59,7 +60,7 @@ namespace Api_UserOffice.Controllers
         }
 
         //[Authorize(Roles = "Administrador")]
-        [HttpPut("{id}", Name = "Atulizar usuário")]
+        [HttpPut("{id}", Name = "Update User")]
         public async Task<IActionResult> Put([FromServices] IUserUp userService, UserDto modelUser)
         {
             var updatedUser = await userService.UpUserAsync(modelUser);
@@ -70,19 +71,26 @@ namespace Api_UserOffice.Controllers
             }
             else
             {
-                throw new Exception("Erro ao Atualizar usuário");
+                throw new Exception("Error Updating User");
             }
         }
 
-        [HttpPut("AtualizarStatus/{email}", Name = "Atulizar Status")]
+        [HttpPut("UpdateStatus/{email}", Name = "Update Status")]
         public async Task<IActionResult> PutStatus([FromServices] IUserUp userService, string email)
         {
             var updatedUser = await userService.IsActiveUserAsync(email);
             return this.StatusCode(StatusCodes.Status200OK, updatedUser);
         }
 
+        [HttpPut("UpPassword/{id}", Name = "Update Password")]
+        [ServiceFilter(typeof(UserAuthentication))]
+        public async Task<IActionResult> UpdatePassword([FromServices] IUserUp userService, AlterPasswordUpDto user)
+        {
+            var alterPassword = await userService.AlterPassword(user);
+            return this.StatusCode(StatusCodes.Status204NoContent, alterPassword);
+        }
 
-        [HttpDelete("{id}", Name = "Deletar usuário pelo ID")]
+        [HttpDelete("{id}", Name = "Delete user from the ID")]
         public async Task<IActionResult> Delete([FromServices] IDeleteUser userService, int id)
         {
             var user = await _getUser1.SearchUserIdAsync(id);

@@ -9,11 +9,12 @@ public class ContexSeedInMemory
     public static (User user, string password) Seed(ApiUserOfficeContext context)
     {
 
-        (var user, string password) = UserBuilderTest.Build();
+        (var user, string password) = UserBuilderTest.BuildUserAndPassword();
         user.Email = "johndoe@gmail.com";
         user.FancyName = "teste";
-        user.Role = "administrador";
+        user.Role = "administrator";
         user.IsActive = true;
+        //user.AlterPassword = "";
         user.UpdateAt = DateTime.Now;
         context.User.Add(user);
 

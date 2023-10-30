@@ -15,9 +15,9 @@ namespace Validator.Test.LoginTest;
 public class LoginUserTest
 {
     [Fact]
-    public async Task Validar_sucesso()
+    public async Task Validate_Success()
     {
-        (var user, var password) = UserBuilderTest.Build();
+        (var user, var password) = UserBuilderTest.BuildUserAndPassword();
 
         var userCase = CreateUser(user);
         user.Role = "administrador";
@@ -30,14 +30,14 @@ public class LoginUserTest
 
         result.Should().NotBeNull();
         Convert.ToString(result.GetType().GetProperty("Email").GetValue(result)).Should().Be(user.Email);
-        Convert.ToString(result.GetType().GetProperty("Password").GetValue(result)).Should().Be(user.Password);
+       // Convert.ToString(result.GetType().GetProperty("Password").GetValue(result)).Should().Be(user.Password);
 
     }
 
     [Fact]
-    public async Task Validar_ErroPassword()
+    public async Task Validate_ErroPassword()
     {
-        (var user, var password) = UserBuilderTest.Build();
+        (var user, var password) = UserBuilderTest.BuildUserAndPassword();
 
         var userCase = CreateUser(user);
         user.Role = "administrador";
@@ -57,9 +57,9 @@ public class LoginUserTest
     }
 
     [Fact]
-    public async Task Validar_ErroEmail()
+    public async Task Validate_ErroEmail()
     {
-        (var user, var password) = UserBuilderTest.Build();
+        (var user, var password) = UserBuilderTest.BuildUserAndPassword();
 
         var userCase = CreateUser(user);
         user.Role = "administrador";
@@ -82,7 +82,7 @@ public class LoginUserTest
     {
         var encryptPassword = EncryptPasswordTestBuilder.Instantiates();
         var token = TokenTestBuilder.TokenInstantiates();
-        var repositoryReadOnly = UserReadLoginPasswordTest.UserInstantiates().RecuperarLoginSenha(user).build();
+        var repositoryReadOnly = UserReadLoginPasswordTest.UserInstantiates().RecoverLoginPassword(user).build();
 
         return new LoginUser(repositoryReadOnly, encryptPassword, token);
     }
