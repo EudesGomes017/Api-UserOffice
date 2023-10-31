@@ -15,36 +15,30 @@ public class LoginUserTestVersionOne : ControllerBase
     private string password;
     public LoginUserTestVersionOne(ApplicationFactory<Program> factory) : base(factory)
     {
-        _user = factory.RecuperarUser();
-        password = factory.RecuperarPassword();
+        _user = factory.RecoverUser();
+        password = factory.RecoverPassword();
     }
 
     [Fact]
-    public async Task Valida_Sucesso()
+    public async Task Validates_Sucesso()
     {
-        var requeisicao =  new LoginUserDto
+        var requisition =  new LoginUserDto
         {
             Email = _user.Email,
             Password = password
 
         };
 
-        //requeisicao.Role = "administrador";
-        //requeisicao.Person = (StatusUser)1;
-        //requeisicao.Role = "Administrador";
-        //requeisicao.FancyName = "D.L.E.A";
-        //requeisicao.IsActive = true;
+        var answer = await PostRequest(METODO, requisition); 
 
-        var resposta = await PostRequest(METODO, requeisicao); 
+        answer.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
 
-        resposta.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
-
-      await using var respotBody = await resposta.Content.ReadAsStreamAsync();
+      await using var answerBody = await answer.Content.ReadAsStreamAsync();
    
-        var respotaData = await JsonDocument.ParseAsync(respotBody);
+        var answerData = await JsonDocument.ParseAsync(answerBody);
 
-       // respotaData.RootElement.GetProperty("email").GetString().Should().NotBeNullOrWhiteSpace().And.Be(user.Email);
-        respotaData.RootElement.GetProperty("token").GetString().Should().NotBeNullOrWhiteSpace();
+       // answerData.RootElement.GetProperty("email").GetString().Should().NotBeNullOrWhiteSpace().And.Be(user.Email);
+        answerData.RootElement.GetProperty("token").GetString().Should().NotBeNullOrWhiteSpace();
 
     }
 }

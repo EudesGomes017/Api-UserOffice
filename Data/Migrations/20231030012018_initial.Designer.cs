@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ApiUserOfficeContext))]
-    [Migration("20231022212406_initial")]
+    [Migration("20231030012018_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -126,7 +126,7 @@ namespace Data.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Documento")
+                    b.Property<string>("Document")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -172,8 +172,8 @@ namespace Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 10, 22, 18, 24, 5, 979, DateTimeKind.Local).AddTicks(8424),
-                            Documento = "100.100.100-19",
+                            CreatedAt = new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6551),
+                            Document = "100.100.100-19",
                             Email = "johndoe@gmail.com",
                             FancyName = "",
                             IsActive = true,
@@ -181,13 +181,13 @@ namespace Data.Migrations
                             Password = "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01",
                             Person = 0,
                             Role = "Administrador",
-                            UpdateAt = new DateTime(2023, 10, 22, 18, 24, 5, 979, DateTimeKind.Local).AddTicks(8440)
+                            UpdateAt = new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6568)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2023, 10, 22, 18, 24, 5, 979, DateTimeKind.Local).AddTicks(8631),
-                            Documento = "100.514.624-19",
+                            CreatedAt = new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6891),
+                            Document = "100.514.624-19",
                             Email = "johndo2@gmail.com",
                             FancyName = "",
                             IsActive = true,
@@ -195,7 +195,7 @@ namespace Data.Migrations
                             Password = "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01",
                             Person = 0,
                             Role = "Usuario",
-                            UpdateAt = new DateTime(2023, 10, 22, 18, 24, 5, 979, DateTimeKind.Local).AddTicks(8632)
+                            UpdateAt = new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6892)
                         });
                 });
 

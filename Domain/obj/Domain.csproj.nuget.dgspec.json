@@ -108,6 +108,10 @@
               "target": "Package",
               "version": "[1.6.9, )"
             },
+            "NSwag.Annotations": {
+              "target": "Package",
+              "version": "[13.20.0, )"
+            },
             "Newton.JsonMediaTypeFormatter": {
               "target": "Package",
               "version": "[1.0.3, )"

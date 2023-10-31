@@ -8,7 +8,7 @@ public class FilterExcepetion : IExceptionFilter
 {
     public void OnException(ExceptionContext context)
     {
-        if (context.Exception is SistemaTaskException)
+        if (context.Exception is SystemTaskException)
         {
             ProcessMessageSistemaException(context);
         }

@@ -1,8 +1,9 @@
 ﻿using Domain.Interface.RepositoryDomain;
+using Domain.Services.serviceUser.InterfaceUsersServices;
 
 namespace Domain.Services.serviceUser.services.SharedUser;
 
-public class VerificaPassWord : IVerificaPassWord
+public class VerificaPassWord : IVerifyPassWord
 {
     private readonly IUserRepositoryDomain _userRepositoryDomain;
 
@@ -10,7 +11,7 @@ public class VerificaPassWord : IVerificaPassWord
     {
         _userRepositoryDomain = userRepositoryDomain;
     }
-    public async Task<bool> SearchrDocument(string password)
+    public async Task<bool> SearchrPasssword(string password)
     {
         try
         {

@@ -19,11 +19,11 @@ public class ControllerBase : IClassFixture<ApplicationFactory<Program>>
 
     }
 
-    protected async Task<HttpResponseMessage> PostRequest(string metodo, object body)
+    protected async Task<HttpResponseMessage> PostRequest(string method, object body)
     {
 
         var jsonString = JsonConvert.SerializeObject(body);
-        var result = await _httpClient.PostAsync(metodo, new StringContent(jsonString, Encoding.UTF8, "application/json"));
+        var result = await _httpClient.PostAsync(method, new StringContent(jsonString, Encoding.UTF8, "application/json"));
         return result;
     }
 }

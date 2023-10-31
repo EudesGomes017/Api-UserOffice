@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System.Security.Cryptography.X509Certificates;
 using Validator.Test.UtilsTeste;
 
 namespace Validator.Test;
@@ -49,12 +48,12 @@ public class ApplicationFactory<TStartup> : WebApplicationFactory<TStartup> wher
             });
     }
 
-    public User RecuperarUser()
+    public User RecoverUser()
     {
         return _user;
     }
 
-    public string RecuperarPassword()
+    public string RecoverPassword()
     {
         return password;
     }

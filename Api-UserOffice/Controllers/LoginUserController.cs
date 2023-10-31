@@ -1,6 +1,5 @@
 ﻿using Domain.Dto;
 using Domain.Services.serviceUser.AuthUser;
-using Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api_UserOffice.Controllers;
@@ -9,7 +8,7 @@ namespace Api_UserOffice.Controllers;
 [Route("[controller]")]
 public class LoginUserController : ControllerBase
 {
-    [HttpPost(Name = "Logar no sistema")]
+    [HttpPost(Name = "Log in to the system")]
     public async Task<IActionResult> Authentication([FromServices] ILoginUser userRepositoryDomain, LoginUserDto user)
     {
         var userFind = await userRepositoryDomain.UserByEmailAsync(user);           

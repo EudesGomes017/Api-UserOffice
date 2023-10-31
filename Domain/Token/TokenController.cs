@@ -7,31 +7,27 @@ namespace Domain.Token;
 
 public class TokenController
 {
-    private const string EmailAlias = "Email";
+    private const string EmailAlias = "eml";
     private const string NameAlias = "Name";
     private const string RoleAlias = "Role";
 
-    private readonly double _tempoDeVidaDoTokenEmMinutos;
-    private readonly string _chaveDeSeguranca;
+    private readonly double _tokenLifetimeInMinutes;
+    private readonly string _securityKey;
 
-    public TokenController(double tempoDeVidaDoTokenEmMinutos, string chaveDeSeguranca)
+    public TokenController(double tokenLifetimeInMinutes, string SecurityKey)
     {
-        _tempoDeVidaDoTokenEmMinutos = tempoDeVidaDoTokenEmMinutos;
-        _chaveDeSeguranca = chaveDeSeguranca;
+        _tokenLifetimeInMinutes = tokenLifetimeInMinutes;
+        _securityKey = SecurityKey;
     }
 
-    public string GerarToken(User user)
+    public string GenerateToken(User user)
     {
         var claims = new List<Claim>
         {
-
+                    new Claim(EmailAlias, user.Email),//  para recuperar o email para alterar a senha
                    new Claim(ClaimTypes.Email, user.Email),
                    new Claim(ClaimTypes.Name, user.Name),
                    new Claim(ClaimTypes.Role, user.Role)
-
-                    //new Claim(EmailAlias, user),
-                    //new Claim(NameAlias, user),
-                    //new Claim(RoleAlias, user)
 
             };
 
@@ -40,7 +36,7 @@ public class TokenController
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(claims),
-            Expires = DateTime.UtcNow.AddMinutes(_tempoDeVidaDoTokenEmMinutos),
+            Expires = DateTime.UtcNow.AddMinutes(_tokenLifetimeInMinutes),
             SigningCredentials = new SigningCredentials(SimtricKey(), SecurityAlgorithms.HmacSha256Signature)
         };
 
@@ -50,11 +46,11 @@ public class TokenController
 
     }
 
-    public void ValidationToken(string token)
+    public ClaimsPrincipal ValidationToken(string token)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
 
-        var parametroValidation = new TokenValidationParameters
+        var parameterValidation = new TokenValidationParameters
         {
             RequireExpirationTime = true,
             IssuerSigningKey = SimtricKey(),
@@ -64,13 +60,21 @@ public class TokenController
 
         };
 
-        tokenHandler.ValidateToken(token, parametroValidation, out _);
+        var claims = tokenHandler.ValidateToken(token, parameterValidation, out _);
 
+        return claims;
+    }
+
+    public string RecoverEmail(string token)
+    {
+        var claims = ValidationToken(token);
+
+        return claims.FindFirst(EmailAlias).Value;
     }
 
     public SymmetricSecurityKey SimtricKey()
     {
-        var symmetricKey = Convert.FromBase64String(_chaveDeSeguranca);
+        var symmetricKey = Convert.FromBase64String(_securityKey);
         return new SymmetricSecurityKey(symmetricKey);
     }
 }

@@ -42,7 +42,7 @@ public class UserRepositoryData : GeralRepositoryData, IUserRepositoryDomain
 
         query = query.AsNoTracking()
 
-                     .Where(x => x.Documento == document);
+                     .Where(x => x.Document == document);
 
         return await query.FirstOrDefaultAsync();
     }
@@ -57,6 +57,16 @@ public class UserRepositoryData : GeralRepositoryData, IUserRepositoryDomain
 
         return await query.FirstOrDefaultAsync();
     }
+
+    //public async Task<User> AlterPassword(string? alterPassword)
+    //{
+    //    IQueryable<User> query = _apiUserOfficeContext.User;
+
+    //    query = query.AsNoTracking()
+
+    //                 .Where(x => x.AlterPassword == alterPassword);
+    //    return await query.FirstOrDefaultAsync();
+    //}
 
     public async Task<User> UserByIdAsync(int? id)
     {

@@ -7,8 +7,8 @@ public class StrategyValidatorCnpj : IStrategyValidatoDocument
     {
         bool cnpjValiator = false;
 
-        int dv1 = CalcularDigitoVerificadorCnpj(document.Substring(0, 12));
-        int dv2 = CalcularDigitoVerificadorCnpj(document.Substring(0, 12) + dv1);
+        int dv1 = CalculateVerifierDigitCNPJ(document.Substring(0, 12));
+        int dv2 = CalculateVerifierDigitCNPJ(document.Substring(0, 12) + dv1);
 
         // Verifique se os dígitos verificadores calculados correspondem aos dígitos originais
         if (dv1 == int.Parse(document[12].ToString()) && dv2 == int.Parse(document[13].ToString()))
@@ -19,7 +19,7 @@ public class StrategyValidatorCnpj : IStrategyValidatoDocument
         return cnpjValiator;
     }
 
-    private static int CalcularDigitoVerificadorCnpj(string parteCNPJ)
+    private static int CalculateVerifierDigitCNPJ(string parteCNPJ)
     {
         int soma = 0;
         int peso = 2;

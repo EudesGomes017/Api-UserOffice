@@ -1,6 +1,6 @@
 ﻿namespace Exceptions.ExceptionBase;
 
-public class ErroValidatorException : SistemaTaskException
+public class ErroValidatorException : SystemTaskException
 {
     public List<string> MesssageError { get; set; }
 

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Domain.Dto;
+﻿using Domain.Dto;
 using Domain.Interface.RepositoryDomain;
 using Domain.Services.serviceUser.Criptorgrafia;
 using Domain.Token;
@@ -28,7 +27,7 @@ public class LoginUser : ILoginUser
         try
         {
             var result = await _userRepositoryDomain.UserByEmailAsync(userLogin.Email);
-            
+
 
             if (result == null)
             {
@@ -44,17 +43,18 @@ public class LoginUser : ILoginUser
 
             if (Password == result.Password)
             {
-                token = _tokenController.GerarToken(result);
+                token = _tokenController.GenerateToken(result);
             }
 
-            return new { Id = result.Id, Name = result.Name, Email = result.Email, Token = token, Password = Password};
+            return new { Id = result.Id, Name = result.Name, Email = result.Email, Token = token };
+
         }
 
         catch (LoginInvalideException ex)
         {
-            throw ex; 
+            throw ex;
         }
 
-       
-    }   
+
+    }
 }

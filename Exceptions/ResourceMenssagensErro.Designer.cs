@@ -187,6 +187,15 @@ namespace Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password não atualziado!.
+        /// </summary>
+        public static string NOVO_PASSWORD_INVALID {
+            get {
+                return ResourceManager.GetString("NOVO_PASSWORD_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password vazio!.
         /// </summary>
         public static string PASSWORD_BRANCO {
@@ -223,11 +232,29 @@ namespace Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Token Expirado!.
+        /// </summary>
+        public static string TOKEN_EXPIRADO {
+            get {
+                return ResourceManager.GetString("TOKEN_EXPIRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Erro ao informar o Login.
         /// </summary>
         public static string USER_FAIL_LOGIN {
             get {
                 return ResourceManager.GetString("USER_FAIL_LOGIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuário sem permissão!.
+        /// </summary>
+        public static string USER_WITHOUT_PERMISE {
+            get {
+                return ResourceManager.GetString("USER_WITHOUT_PERMISE", resourceCulture);
             }
         }
     }

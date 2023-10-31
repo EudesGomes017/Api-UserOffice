@@ -8,7 +8,7 @@ namespace Validator.Test.UtilsTeste.EntidadesBuilderTest;
 
 public class UserBuilderTest    
 {
-    public static (User usuario, string email) Build()
+    public static (User usuario, string email) BuildUserAndPassword()
     {
         string password = string.Empty;
 
@@ -23,7 +23,7 @@ public class UserBuilderTest
                return EncryptPasswordTestBuilder.Instantiates().encrypt(password);
              
             })
-            .RuleFor(c => c.Documento, f => f.Person.Cpf());
+            .RuleFor(c => c.Document, f => f.Person.Cpf());
 
         return (resultadoGerador, password);
     }
