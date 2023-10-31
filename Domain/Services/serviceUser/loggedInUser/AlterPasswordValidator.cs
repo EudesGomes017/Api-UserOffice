@@ -7,7 +7,7 @@ namespace Domain.Services.serviceUser.loggedInUser
     {
         public AlterPasswordValidator()
         {
-            RuleFor(e => e.SenhaNova).SetValidator(new PasswordValidate());
+            RuleFor(e => e.Passwordnew).SetValidator(new PasswordValidate());
         }
     }
 

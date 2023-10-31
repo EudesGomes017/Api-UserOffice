@@ -4,12 +4,9 @@ using Domain.Interface.RepositoryDomain;
 using Domain.Models;
 using Domain.Services.serviceUser.Criptorgrafia;
 using Domain.Services.serviceUser.InterfaceUsersServices;
-using Domain.Validators.ValidatorUser;
-using Exceptions.ExceptionBase;
-using Exceptions;
 using Domain.Services.serviceUser.loggedInUser;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Components.Web;
+using Exceptions;
+using Exceptions.ExceptionBase;
 
 namespace Domain.Services.serviceUser.services;
 
@@ -59,7 +56,6 @@ public class UserUp : IUserUp
         }
 
     }
-
     public async Task<string> IsActiveUserAsync(string email)
     {
         try
@@ -88,22 +84,19 @@ public class UserUp : IUserUp
     {
         try
         {
-         
             var recoverLogin = await _iloggedInUser.RecoverLogin();
 
             var userAnsewr = await _userRepositoryDomain.UserByIdAsync(recoverLogin.Id);
 
             validator(user);
 
-            var newPassword = _encryptPassword.encrypt(user.SenhaNova);
+            var newPassword = _encryptPassword.encrypt(user.Passwordnew);
 
             userAnsewr.Password = newPassword;
 
-            var result = _mapper.Map<User>(userAnsewr);
+            _userRepositoryDomain.Atualizar(userAnsewr);
 
-            _userRepositoryDomain.Atualizar(result);
-
-            await _userRepositoryDomain.SalvarMudancasAsync();    
+            await _userRepositoryDomain.SalvarMudancasAsync();
 
             return true;
         }
@@ -122,7 +115,7 @@ public class UserUp : IUserUp
         var validator = new AlterPasswordValidator();
         var result = validator.Validate(user);
 
-        var passwordUpdateencrypt = _encryptPassword.encrypt(user.SenhaNova);
+        var passwordUpdateencrypt = _encryptPassword.encrypt(user.Passwordnew);
 
         //verifica password é igual que foi salvo na banco de dados
         if (pegaPassword.Password.Equals(passwordUpdateencrypt))

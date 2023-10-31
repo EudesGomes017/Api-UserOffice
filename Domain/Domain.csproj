@@ -30,6 +30,7 @@
 	  <PackageReference Include="Microsoft.OpenApi" Version="1.6.9" />
 	  <PackageReference Include="Newton.JsonMediaTypeFormatter" Version="1.0.3" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	  <PackageReference Include="NSwag.Annotations" Version="13.20.0" />
     <Folder Include="Services\ServiceAddresRegister\" />
     <Folder Include="Services\ServicesDepartment\" />
   </ItemGroup>

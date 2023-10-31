@@ -1,8 +1,11 @@
-﻿namespace Domain.Dto
+﻿
+
+namespace Domain.Dto
 {
     public class AlterPasswordUpDto
     {
-        public string? SenhaNova { get; set; }
+
+        public string? Passwordnew { get; set; }
 
     }
 }

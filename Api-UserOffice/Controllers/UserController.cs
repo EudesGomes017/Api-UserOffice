@@ -79,6 +79,8 @@ namespace Api_UserOffice.Controllers
         public async Task<IActionResult> PutStatus([FromServices] IUserUp userService, string email)
         {
             var updatedUser = await userService.IsActiveUserAsync(email);
+
+
             return this.StatusCode(StatusCodes.Status200OK, updatedUser);
         }
 
@@ -87,7 +89,7 @@ namespace Api_UserOffice.Controllers
         public async Task<IActionResult> UpdatePassword([FromServices] IUserUp userService, AlterPasswordUpDto user)
         {
             var alterPassword = await userService.AlterPassword(user);
-            return this.StatusCode(StatusCodes.Status204NoContent, alterPassword);
+            return this.StatusCode(StatusCodes.Status200OK, alterPassword);
         }
 
         [HttpDelete("{id}", Name = "Delete user from the ID")]
