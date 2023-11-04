@@ -1,11 +1,9 @@
-﻿using Bogus.DataSets;
-using Domain.Dto;
+﻿using Domain.Dto;
 using Domain.Models;
 using Domain.Services.serviceUser.AuthUser;
 using Exceptions;
 using Exceptions.ExceptionBase;
 using FluentAssertions;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Validator.Test.RepositoryTest;
 using Validator.Test.UtilsTeste.EntidadesBuilderTest;
 using Xunit;
@@ -30,7 +28,7 @@ public class LoginUserTest
 
         result.Should().NotBeNull();
         Convert.ToString(result.GetType().GetProperty("Email").GetValue(result)).Should().Be(user.Email);
-       // Convert.ToString(result.GetType().GetProperty("Password").GetValue(result)).Should().Be(user.Password);
+        // Convert.ToString(result.GetType().GetProperty("Password").GetValue(result)).Should().Be(user.Password);
 
     }
 
@@ -40,7 +38,9 @@ public class LoginUserTest
         (var user, var password) = UserBuilderTest.BuildUserAndPassword();
 
         var userCase = CreateUser(user);
+
         user.Role = "administrador";
+
         Func<Task> action = async () =>
       {
           await userCase.UserByEmailAsync(new LoginUserDto
@@ -49,9 +49,9 @@ public class LoginUserTest
               Password = "testetes"
 
           });
-         
+
       };
-       
+
         await action.Should().ThrowAsync<LoginInvalideException>()
             .Where(exception => exception.Message.Equals(ResourceMenssagensErro.USER_FAIL_LOGIN));
     }

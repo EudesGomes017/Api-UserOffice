@@ -13,21 +13,18 @@ namespace Domain.Services.serviceUser.services;
 public class UserUp : IUserUp
 {
 
-    private readonly IUserRepositoryDomain _userRepositoryDomain;
-    private readonly IGetUser _getUser;
+    private readonly IGetUserRepositoryDomain _userRepositoryDomain;
+    private readonly IGetUserRepositoryDomainDto _getUser;
     private readonly IMapper _mapper;
     private readonly IloggedInUser _iloggedInUser;
-    private readonly IVerifyPassWord _verifyPassWord;
     private readonly EncryptPassword _encryptPassword;
 
 
-    public UserUp(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, IGetUser getUser, IloggedInUser iloggedInUser, IVerifyPassWord verifyPassWord, EncryptPassword encryptPassword)
+    public UserUp(IGetUserRepositoryDomain userRepositoryDomain, IGetUserRepositoryDomainDto getUser, IMapper mapper, IloggedInUser iloggedInUser, EncryptPassword encryptPassword)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _mapper = mapper;
         _getUser = getUser;
-        _iloggedInUser = iloggedInUser;
-        _verifyPassWord = verifyPassWord;
         _encryptPassword = encryptPassword;
 
     }
@@ -77,56 +74,6 @@ public class UserUp : IUserUp
         catch (Exception)
         {
             throw;
-        }
-    }
-
-    public async Task<bool> AlterPassword(AlterPasswordUpDto user)
-    {
-        try
-        {
-            var recoverLogin = await _iloggedInUser.RecoverLogin();
-
-            var userAnsewr = await _userRepositoryDomain.UserByIdAsync(recoverLogin.Id);
-
-            validator(user);
-
-            var newPassword = _encryptPassword.encrypt(user.Passwordnew);
-
-            userAnsewr.Password = newPassword;
-
-            _userRepositoryDomain.Atualizar(userAnsewr);
-
-            await _userRepositoryDomain.SalvarMudancasAsync();
-
-            return true;
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-    }
-
-    private async Task validator(AlterPasswordUpDto user)
-    {
-        var recoverLogin = await _iloggedInUser.RecoverLogin();
-
-        var pegaPassword = await _userRepositoryDomain.UserByIdAsync(recoverLogin.Id);
-
-        var validator = new AlterPasswordValidator();
-        var result = validator.Validate(user);
-
-        var passwordUpdateencrypt = _encryptPassword.encrypt(user.Passwordnew);
-
-        //verifica password é igual que foi salvo na banco de dados
-        if (pegaPassword.Password.Equals(passwordUpdateencrypt))
-        {
-            result.Errors.Add(new FluentValidation.Results.ValidationFailure("passwordUpdat", ResourceMenssagensErro.NOVO_PASSWORD_INVALID));
-        }
-
-        if (!result.IsValid)
-        {
-            var messageErro = result.Errors.Select(e => e.ErrorMessage).ToList();
-            throw new ErroValidatorException(messageErro);
         }
     }
 }

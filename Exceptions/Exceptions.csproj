@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <None Include="ResourceMenssagensErro.en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceMenssagensErro.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

@@ -10,6 +10,7 @@ public class ContexSeedInMemory
     {
 
         (var user, string password) = UserBuilderTest.BuildUserAndPassword();
+        user.Id = 2;
         user.Email = "johndoe@gmail.com";
         user.FancyName = "teste";
         user.Role = "administrator";

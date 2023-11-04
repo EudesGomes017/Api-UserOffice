@@ -7,9 +7,9 @@ namespace Domain.Services.serviceUser.services.SharedUser;
 
 public class VerificarDocumento : IVerifyDocument
 {
-    private readonly IUserRepositoryDomain _userRepositoryDomain;
+    private readonly Interface.RepositoryDomain.IGetUserRepositoryDomain _userRepositoryDomain;
 
-    public VerificarDocumento(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, TokenController tokenController)
+    public VerificarDocumento(Interface.RepositoryDomain.IGetUserRepositoryDomain userRepositoryDomain, IMapper mapper, TokenController tokenController)
     {
         _userRepositoryDomain = userRepositoryDomain;
 

@@ -69,19 +69,23 @@ namespace Api_UserOffice
 
             builder.Services.AddScoped<IPostUser, PostUser>();
             builder.Services.AddScoped<ISearchEamil, UserEamil>();
+
             builder.Services.AddScoped<IVerifyDocument, VerificarDocumento>();
             builder.Services.AddScoped<IloggedInUser, loggedInUser>();
 
-            builder.Services.AddScoped<IGetUser, GetUser>();
+            builder.Services.AddScoped<IGetUserRepositoryDomainDto, GetUser>();
             builder.Services.AddScoped<IUserUp, UserUp>();
-            builder.Services.AddScoped<IDeleteUser, DeleteUser>();
 
+            builder.Services.AddScoped<IDeleteUser, DeleteUser>();
             builder.Services.AddScoped<ILoginUser, LoginUser>();
-            builder.Services.AddScoped<IUserRepositoryDomain, UserRepositoryData>();
+
+            builder.Services.AddScoped<IGetUserRepositoryDomain, UserRepositoryData>();
             builder.Services.AddScoped<IVerifyPassWord, VerificaPassWord>();
 
             builder.Services.AddScoped<IDepartmentDomain, DepartmentrRepositoryData>();
             builder.Services.AddScoped<IGeralRepositoryDomain, GeralRepositoryData>();
+
+            builder.Services.AddScoped<INewPassword, NewPassword>();
 
             // Add services to the container.
             builder.Services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)

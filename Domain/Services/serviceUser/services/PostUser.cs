@@ -12,14 +12,14 @@ namespace Domain.Services.serviceUser.services;
 
 public class PostUser : IPostUser
 {
-    private readonly IUserRepositoryDomain _userRepositoryDomain;
+    private readonly Interface.RepositoryDomain.IGetUserRepositoryDomain _userRepositoryDomain;
     private readonly IMapper _mapper;
     private readonly EncryptPassword _encryptPassword; 
     private readonly ISearchEamil _searchEamil;
     private readonly IVerifyDocument _verifyDocumento;
     private readonly IVerifyPassWord _verifyPassWord;
 
-    public PostUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword,
+    public PostUser(Interface.RepositoryDomain.IGetUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword,
          ISearchEamil searchEamil, IVerifyDocument verifyDocumento, IVerifyPassWord verifyPassWord)
     {
         _userRepositoryDomain = userRepositoryDomain;

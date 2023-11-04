@@ -10,8 +10,8 @@ namespace Domain.Services.serviceUser.loggedInUser
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly TokenController _tokenController;
-        private readonly IUserRepositoryDomain _userRepositoryDomain;
-        public loggedInUser(IHttpContextAccessor httpContextAccessor, TokenController tokenController, IUserRepositoryDomain userRepositoryDomain)
+        private readonly Interface.RepositoryDomain.IGetUserRepositoryDomain _userRepositoryDomain;
+        public loggedInUser(IHttpContextAccessor httpContextAccessor, TokenController tokenController, Interface.RepositoryDomain.IGetUserRepositoryDomain userRepositoryDomain)
         {
             _httpContextAccessor = httpContextAccessor;
             _tokenController = tokenController;

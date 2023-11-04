@@ -9,10 +9,10 @@ namespace Domain.Services.serviceUser.services;
 public class DeleteUser : IDeleteUser
 {
 
-    private readonly IUserRepositoryDomain _userRepositoryDomain;
+    private readonly Interface.RepositoryDomain.IGetUserRepositoryDomain _userRepositoryDomain;
     private readonly IMapper _mapper;
 
-    public DeleteUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper)
+    public DeleteUser(Interface.RepositoryDomain.IGetUserRepositoryDomain userRepositoryDomain, IMapper mapper)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _mapper = mapper;

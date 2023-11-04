@@ -9,11 +9,11 @@ namespace Domain.Services.serviceUser.AuthUser;
 public class LoginUser : ILoginUser
 {
 
-    private readonly IUserRepositoryDomain _userRepositoryDomain;
+    private readonly IGetUserRepositoryDomain _userRepositoryDomain;
     private readonly EncryptPassword _encryptPassword;
     private readonly TokenController _tokenController;
 
-    public LoginUser(IUserRepositoryDomain userRepositoryDomain, EncryptPassword encryptPassword, TokenController tokenController)
+    public LoginUser(IGetUserRepositoryDomain userRepositoryDomain, EncryptPassword encryptPassword, TokenController tokenController)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _encryptPassword = encryptPassword;

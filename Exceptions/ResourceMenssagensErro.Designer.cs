@@ -187,7 +187,7 @@ namespace Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password não atualziado!.
+        ///   Looks up a localized string similar to Password não atualiziado!.
         /// </summary>
         public static string NOVO_PASSWORD_INVALID {
             get {
@@ -196,7 +196,7 @@ namespace Exceptions {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password vazio!.
+        ///   Looks up a localized string similar to Password em branco!.
         /// </summary>
         public static string PASSWORD_BRANCO {
             get {
@@ -219,6 +219,15 @@ namespace Exceptions {
         public static string PASSWORD_EXISTE {
             get {
                 return ResourceManager.GetString("PASSWORD_EXISTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password está vazio!.
+        /// </summary>
+        public static string PASSWORD_VAZIO {
+            get {
+                return ResourceManager.GetString("PASSWORD_VAZIO", resourceCulture);
             }
         }
         

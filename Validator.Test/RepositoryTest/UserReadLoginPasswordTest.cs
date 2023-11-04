@@ -8,13 +8,13 @@ namespace Validator.Test.RepositoryTest;
 public class UserReadLoginPasswordTest
 {
     private static UserReadLoginPasswordTest _intance;
-    private readonly Mock<IUserRepositoryDomain> _IUserRepositoryDomain;
+    private readonly Mock<Domain.Interface.RepositoryDomain.IGetUserRepositoryDomain> _IUserRepositoryDomain;
 
     private UserReadLoginPasswordTest()
     {
         if (_IUserRepositoryDomain == null)
         {
-            _IUserRepositoryDomain = new Mock<IUserRepositoryDomain>();
+            _IUserRepositoryDomain = new Mock<Domain.Interface.RepositoryDomain.IGetUserRepositoryDomain>();
         } 
     }
 
@@ -33,7 +33,7 @@ public class UserReadLoginPasswordTest
         return this;
     }
 
-    public IUserRepositoryDomain build()
+    public Domain.Interface.RepositoryDomain.IGetUserRepositoryDomain build()
     {
         return _IUserRepositoryDomain.Object;
     }

@@ -10,11 +10,11 @@ namespace Domain.Services.serviceUser.services.SharedUser;
 public class UserEamil : ISearchEamil
 {
 
-    private readonly IUserRepositoryDomain _userRepositoryDomain;
+    private readonly Interface.RepositoryDomain.IGetUserRepositoryDomain _userRepositoryDomain;
     private readonly IMapper _mapper;
     
 
-    public UserEamil(IUserRepositoryDomain userRepositoryDomain, IMapper mapper)
+    public UserEamil(Interface.RepositoryDomain.IGetUserRepositoryDomain userRepositoryDomain, IMapper mapper)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _mapper = mapper;

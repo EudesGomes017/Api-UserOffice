@@ -163,7 +163,7 @@
     <value>Password not updated!</value>
   </data>
   <data name="PASSWORD_BRANCO" xml:space="preserve">
-    <value>Empty password!</value>
+    <value>Password faltando caracter!</value>
   </data>
   <data name="PASSWORD_CARACTER" xml:space="preserve">
     <value>Password missing character!</value>
