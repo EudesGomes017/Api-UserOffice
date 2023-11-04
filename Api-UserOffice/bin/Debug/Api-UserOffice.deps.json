@@ -936,6 +936,14 @@
           }
         }
       },
+      "NSwag.Annotations/13.20.0": {
+        "runtime": {
+          "lib/netstandard2.0/NSwag.Annotations.dll": {
+            "assemblyVersion": "13.20.0.0",
+            "fileVersion": "13.20.0.0"
+          }
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.0.6": {
         "dependencies": {
           "SQLitePCLRaw.core": "2.0.6",
@@ -1328,6 +1336,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.0",
           "Microsoft.OpenApi": "1.6.9",
+          "NSwag.Annotations": "13.20.0",
           "Newton.JsonMediaTypeFormatter": "1.0.3",
           "Newtonsoft.Json": "13.0.3"
         },
@@ -2033,6 +2042,13 @@
       "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
+    "NSwag.Annotations/13.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eujjioff/+DVb15fm1hpMJ3XeESgn/XBbiZtKkVGQmab3W3yEd84O8a5tlQhboWdPSlYm7fpZKEln2tG4lyMCw==",
+      "path": "nswag.annotations/13.20.0",
+      "hashPath": "nswag.annotations.13.20.0.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.0.6": {
       "type": "package",

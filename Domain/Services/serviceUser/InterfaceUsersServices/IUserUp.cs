@@ -7,6 +7,5 @@ namespace Domain.Services.serviceUser.InterfaceUsersServices
     {
         Task<UserDto> UpUserAsync(UserDto modelUser);
         Task<string> IsActiveUserAsync(string email);
-        Task<bool> AlterPassword(AlterPasswordUpDto user);
     }
 }

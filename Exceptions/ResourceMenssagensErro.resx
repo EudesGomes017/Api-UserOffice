@@ -160,16 +160,19 @@
     <value>Sem registro na base de dados</value>
   </data>
   <data name="NOVO_PASSWORD_INVALID" xml:space="preserve">
-    <value>Password não atualziado!</value>
+    <value>Password não atualiziado!</value>
   </data>
   <data name="PASSWORD_BRANCO" xml:space="preserve">
-    <value>Password vazio!</value>
+    <value>Password em branco!</value>
   </data>
   <data name="PASSWORD_CARACTER" xml:space="preserve">
     <value>Password faltando caracter!</value>
   </data>
   <data name="PASSWORD_EXISTE" xml:space="preserve">
     <value>E-mail ou Password existe, tente novamente!</value>
+  </data>
+  <data name="PASSWORD_VAZIO" xml:space="preserve">
+    <value>Password está vazio!</value>
   </data>
   <data name="PHONE_INVALIDO" xml:space="preserve">
     <value>Número do telefone inválido !</value>

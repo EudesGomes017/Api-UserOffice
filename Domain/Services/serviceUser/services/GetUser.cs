@@ -7,11 +7,11 @@ using AutoMapper;
 
 namespace Domain.Services.serviceUser.services;
 
-public class GetUser : IGetUser
+public class GetUser : IGetUserRepositoryDomainDto
 {
-    private readonly IUserRepositoryDomain _userRepositoryDomain;
+    private readonly IGetUserRepositoryDomain _userRepositoryDomain;
     private readonly IMapper _mapper;
-    public GetUser(IUserRepositoryDomain userRepositoryDomain, IMapper mapper)
+    public GetUser(IGetUserRepositoryDomain userRepositoryDomain, IMapper mapper)
     {
         _userRepositoryDomain = userRepositoryDomain;
         _mapper = mapper;

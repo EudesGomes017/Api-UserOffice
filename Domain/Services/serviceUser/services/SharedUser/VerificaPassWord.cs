@@ -5,9 +5,9 @@ namespace Domain.Services.serviceUser.services.SharedUser;
 
 public class VerificaPassWord : IVerifyPassWord
 {
-    private readonly IUserRepositoryDomain _userRepositoryDomain;
+    private readonly Interface.RepositoryDomain.IGetUserRepositoryDomain _userRepositoryDomain;
 
-    public VerificaPassWord(IUserRepositoryDomain userRepositoryDomain)
+    public VerificaPassWord(Interface.RepositoryDomain.IGetUserRepositoryDomain userRepositoryDomain)
     {
         _userRepositoryDomain = userRepositoryDomain;
     }

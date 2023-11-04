@@ -6,15 +6,14 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace Api_UserOffice.filter.api;
 
 public class UserAuthentication : AuthorizeAttribute, IAsyncAuthorizationFilter
 {
     private readonly TokenController _tokenController;
-    private readonly IUserRepositoryDomain _userRepositoryDomain;
-    public UserAuthentication(TokenController tokenController, IUserRepositoryDomain userRepositoryDomain)
+    private readonly IGetUserRepositoryDomain _userRepositoryDomain;
+    public UserAuthentication(TokenController tokenController, IGetUserRepositoryDomain userRepositoryDomain)
     {
         _tokenController = tokenController;
         _userRepositoryDomain = userRepositoryDomain;

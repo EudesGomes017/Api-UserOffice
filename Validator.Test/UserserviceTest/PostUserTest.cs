@@ -27,7 +27,7 @@ public class PostUserTest
 
     private PostUser CreatePost(string email = "", string document = "")
     {
-        var repository = UserRepositoryDomainBuilderTest.UserInstantiates().build();
+        var repository = UserRepositoryDomainTest.UserInstantiates().build();
         var mapper = MapperTest.InstantiatesMapper();
         var encryptPassword = EncryptPasswordTestBuilder.Instantiates();
         var token = TokenTestBuilder.TokenInstantiates();

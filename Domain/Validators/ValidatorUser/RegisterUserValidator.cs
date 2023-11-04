@@ -20,7 +20,8 @@ public class RegisterUserValidator : AbstractValidator<UserDto>
             RuleFor(e => e.Email).EmailAddress().WithMessage(ResourceMenssagensErro.EMAIL_INVALIDO);
         });
 
-       // RuleFor(e => e.Password).SetValidator(new PasswordValidate());
+        RuleFor(e => e.Password).SetValidator(new PasswordValidate());
+
         RuleFor(p => p.Password).NotEmpty().WithMessage(ResourceMenssagensErro.PASSWORD_BRANCO);
 
         When(p => !string.IsNullOrWhiteSpace(p.Password), () =>

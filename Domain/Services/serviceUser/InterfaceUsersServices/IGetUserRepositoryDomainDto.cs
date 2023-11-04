@@ -2,7 +2,7 @@
 
 namespace Domain.Services.serviceUser.InterfaceUsersServices
 {
-    public interface IGetUser
+    public interface IGetUserRepositoryDomainDto
     {
         Task<UserDto> SearchUserIdAsync(int? id);
         Task<UserDto[]> SearchAllUsersAsync();

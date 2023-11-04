@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data.RepositoryData;
 
-public class UserRepositoryData : GeralRepositoryData, IUserRepositoryDomain
+public class UserRepositoryData : GeralRepositoryData, IGetUserRepositoryDomain
 {
     private readonly ApiUserOfficeContext _apiUserOfficeContext;
     public UserRepositoryData(ApiUserOfficeContext apiUserOfficeContext) : base(apiUserOfficeContext)
@@ -58,16 +58,6 @@ public class UserRepositoryData : GeralRepositoryData, IUserRepositoryDomain
         return await query.FirstOrDefaultAsync();
     }
 
-    //public async Task<User> AlterPassword(string? alterPassword)
-    //{
-    //    IQueryable<User> query = _apiUserOfficeContext.User;
-
-    //    query = query.AsNoTracking()
-
-    //                 .Where(x => x.AlterPassword == alterPassword);
-    //    return await query.FirstOrDefaultAsync();
-    //}
-
     public async Task<User> UserByIdAsync(int? id)
     {
         IQueryable<User> query = _apiUserOfficeContext.User;
@@ -80,7 +70,6 @@ public class UserRepositoryData : GeralRepositoryData, IUserRepositoryDomain
 
         return await query.FirstOrDefaultAsync();
     }
-
    
 }
 
