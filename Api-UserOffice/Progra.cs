@@ -2,6 +2,9 @@ using Api_UserOffice.filter.api;
 using Data;
 using Data.Context;
 using Data.RepositoryData;
+using Domain.Integracao.Interface;
+using Domain.Integracao.Refit;
+using Domain.Integracao.Service;
 using Domain.Interface.RepositoryDomain;
 using Domain.Services.serviceUser.AuthUser;
 using Domain.Services.serviceUser.InterfaceUsersServices;
@@ -14,6 +17,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Refit;
 using System.Text.Json.Serialization;
 
 namespace Api_UserOffice
@@ -86,6 +90,12 @@ namespace Api_UserOffice
             builder.Services.AddScoped<IGeralRepositoryDomain, GeralRepositoryData>();
 
             builder.Services.AddScoped<INewPassword, NewPassword>();
+            builder.Services.AddScoped<Domain.Integracao.Interface.IViaCepIntegracao, ViaCepIntegracao>();
+
+            builder.Services.AddRefitClient<IViacepRefit>().ConfigureHttpClient(httpClient =>
+            {
+                httpClient.BaseAddress = new Uri("https://viacep.com.br/");
+            });
 
             // Add services to the container.
             builder.Services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
@@ -114,6 +124,7 @@ namespace Api_UserOffice
                     ValidateIssuer = false,
                     ValidateAudience = false,
                 };
+
             });
 
             builder.Services.AddSwaggerGen(c =>

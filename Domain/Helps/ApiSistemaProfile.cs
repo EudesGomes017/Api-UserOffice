@@ -10,9 +10,13 @@ public class ApiSistemaProfile : Profile
     {
         CreateMap<User, UserDto>().ReverseMap();
         CreateMap<Department, DepartmentDto>().ReverseMap();
-        CreateMap<AddressRegister, AddressRegisterDto>().ReverseMap();
         CreateMap<User, LoginUserDto>().ReverseMap();
         CreateMap<User, AlterPasswordUpDto>().ReverseMap();
+
+        //CreateMap<AddressRegister, User>() // Mapeamento entre AddressRegister e User
+        //.ForMember(dest => dest.AddressRegister, opt => opt.MapFrom(src => src.User))
+        //// Mapeie outras propriedades conforme necessário
+        //.ReverseMap(); // Se precisar de mapeamento reverso
     }
 }
 

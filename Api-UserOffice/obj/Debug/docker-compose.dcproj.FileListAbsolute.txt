@@ -75,3 +75,5 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.Open
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Refit.HttpClientFactory.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Api-UserOffice\bin\Debug\Refit.dll

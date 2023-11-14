@@ -15,7 +15,13 @@ public class ContexSeedInMemory
         user.FancyName = "teste";
         user.Role = "administrator";
         user.IsActive = true;
-        //user.AlterPassword = "";
+        user.bairro = "";
+        user.uf = "";
+        user.localidade = "";
+        user.cep = "";
+        user.complemento = "";
+        user.numero_da_casa = "";
+        user.logradouro = "";
         user.UpdateAt = DateTime.Now;
         context.User.Add(user);
 

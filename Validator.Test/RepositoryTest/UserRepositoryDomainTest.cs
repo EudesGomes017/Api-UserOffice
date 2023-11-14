@@ -9,7 +9,6 @@ public class UserRepositoryDomainTest
 {
     private static UserRepositoryDomainTest _intance;
     private readonly Mock<IGetUserRepositoryDomain> _repositoryDomain;
-   
     
     private UserRepositoryDomainTest()
     {
@@ -25,7 +24,6 @@ public class UserRepositoryDomainTest
 
         return _intance;
     }
-
 
     public UserRepositoryDomainTest RecoverId(User user)
     {

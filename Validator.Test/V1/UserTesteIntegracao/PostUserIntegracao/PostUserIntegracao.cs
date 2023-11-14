@@ -24,14 +24,17 @@ public class PostUserIntegracao : ControllerBase
         Requisition.Role = "Administrador";
         Requisition.FancyName = "D.L.E.A";
         Requisition.IsActive = true;
-
+        Requisition.logradouro = "patativa";
+        Requisition.bairro = "paratibe";
+        Requisition.complemento = "casa";
+        Requisition.cep = "58066145";
+        Requisition.numero_da_casa = "100";
+        Requisition.uf = "pb";
+        Requisition.localidade = "João Pessoa";
+        Requisition.CreatedAt = DateTime.Now;
 
         var answer = await PostRequest(METODO, Requisition);
         answer.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
-
-       
-
-
 
     }
 }

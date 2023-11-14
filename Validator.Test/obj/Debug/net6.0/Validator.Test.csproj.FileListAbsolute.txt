@@ -500,3 +500,5 @@ C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\runtime
 C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\Dapper.dll
 C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\NSwag.Annotations.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\Refit.dll
+C:\Projeto C#\Projeto2023\Api-UserOffice\Validator.Test\bin\Debug\net6.0\Refit.HttpClientFactory.dll

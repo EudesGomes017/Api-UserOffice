@@ -19,7 +19,7 @@ namespace Validator.Test.AlterSenhaTest
 
             var result = validator.Validate(request);
             result.IsValid.Should().BeFalse();
-            result.Errors.Should().ContainSingle().And.Contain(error => error.ErrorMessage.Equals(ResourceMenssagensErro.PASSWORD_BRANCO));
+            result.Errors.Should().ContainSingle().And.Contain(error => error.ErrorMessage.Equals(ResourceMenssagensErro.PASSWORD_VAZIO));
         }
 
         [Theory]

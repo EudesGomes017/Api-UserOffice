@@ -19,7 +19,6 @@ public class UserRepositoryData : GeralRepositoryData, IGetUserRepositoryDomain
 
         query = query.AsNoTracking()
                        .Include(c => c.Departments)
-                       .Include(c => c.AddressRegister)
                        .OrderBy(x => x.Id);
 
         return await query.ToArrayAsync();
@@ -64,7 +63,6 @@ public class UserRepositoryData : GeralRepositoryData, IGetUserRepositoryDomain
 
         query = query.AsNoTracking()
                       .Include(c => c.Departments)
-                      .Include(c => c.AddressRegister)
                      .Where(x => x.Id == id)
                      .OrderBy(x => x.Id);
 

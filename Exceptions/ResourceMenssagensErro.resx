@@ -129,6 +129,9 @@
   <data name="BUSCA_ID_USER" xml:space="preserve">
     <value>Erro ao buscar o Id do usuário !</value>
   </data>
+  <data name="CEP_ERRADO" xml:space="preserve">
+    <value>Cep informado não existe!</value>
+  </data>
   <data name="DELETE_USER" xml:space="preserve">
     <value>Erro ao deletar o usuário !</value>
   </data>

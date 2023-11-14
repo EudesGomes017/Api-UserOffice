@@ -1,5 +1,4 @@
-﻿using Domain.Enums;
-using Domain.Models;
+﻿using Domain.Models;
 using Domain.Services.serviceUser.Criptorgrafia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -21,18 +20,19 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.Property(x => x.Document).IsRequired();
         builder.Property(x => x.IsActive).IsRequired();
         builder.Property(x => x.Person).IsRequired();
+        builder.Property(x => x.cep).IsRequired();
+        builder.Property(x => x.logradouro).IsRequired();
+        builder.Property(x => x.complemento);
+        builder.Property(x => x.bairro).IsRequired();
+        builder.Property(x => x.localidade).IsRequired();
+        builder.Property(x => x.uf).IsRequired();
+        builder.Property(x => x.numero_da_casa).IsRequired();
         builder.Property(x => x.CreatedAt).IsRequired().HasMaxLength(255);
         builder.Property(x => x.UpdateAt).IsRequired().HasMaxLength(255);
-
-        builder.HasOne(s => s.AddressRegister)
-            .WithOne(ad => ad.User)
-            .HasForeignKey<AddressRegister>(ad => ad.UserId);
 
         builder.HasMany(u => u.Departments)
             .WithOne(mt => mt.user)
             .HasForeignKey(mt => mt.UserId);
-
-
 
         builder.HasData(new List<User>() {
         new User()
@@ -46,13 +46,13 @@ public class UserMap : IEntityTypeConfiguration<User>
             Password = new EncryptPassword("vJyf-9$27j#0").encrypt("12341234"),
             Document = "100.100.100-19",
             FancyName = "",
-            //Cep = "85263789",
-            //State = "SC",
-            //City = "Joinville",
-            //Complement = "casa",
-            //Neighborhood = "Comasa",
-            //NumberDocument = "18535602000109",
-            //TypeUser = TypeUserEnum.Administrador,
+            cep = "85263789",
+            logradouro = "teste",
+            complemento = "casa",
+            bairro = "comasa",
+            localidade = "joinville",
+            uf = "sc",
+            numero_da_casa = "5",
             //TypeDocument = TypeDocumentEnum.CNPJ,
             Role = "Administrador",
             IsActive = true
@@ -68,19 +68,17 @@ public class UserMap : IEntityTypeConfiguration<User>
                 Password = new EncryptPassword("vJyf-9$27j#0").encrypt("12341234"),
                 Document = "100.514.624-19",
                 FancyName = "",
-                //Cep = "85263789",
-                //State = "SC",
-                //City = "Joinville",
-                //Complement = "casa",
-                //Neighborhood = "Comasa",
-                //NumberDocument = "18535602000109",
-                //TypeUser = TypeUserEnum.Administrador,
-                //TypeDocument = TypeDocumentEnum.CNPJ,
+                cep = "85263789",
+                logradouro = "teste",
+                complemento = "casa",
+                bairro = "comasa",
+                localidade = "joinville",
+                uf = "sc",
+                numero_da_casa = "5",
                 Role = "Usuario",
                 IsActive = true
             }
-             }
-              ) ;
-
+        }
+       );
     }
 }

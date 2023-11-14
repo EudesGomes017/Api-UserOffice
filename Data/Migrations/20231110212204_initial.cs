@@ -63,7 +63,14 @@ namespace Data.Migrations
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     Person = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", maxLength: 255, nullable: false),
-                    UpdateAt = table.Column<DateTime>(type: "datetime2", maxLength: 255, nullable: false)
+                    UpdateAt = table.Column<DateTime>(type: "datetime2", maxLength: 255, nullable: false),
+                    cep = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    logradouro = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    complemento = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    bairro = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    localidade = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    uf = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    numero_da_casa = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -177,32 +184,6 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Address",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Cep = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Patio = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Neighborhood = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Locality = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UF = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", maxLength: 255, nullable: false),
-                    UpdateAt = table.Column<DateTime>(type: "datetime2", maxLength: 255, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Address", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Address_User_UserId",
-                        column: x => x.UserId,
-                        principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Department",
                 columns: table => new
                 {
@@ -228,19 +209,13 @@ namespace Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "User",
-                columns: new[] { "Id", "CreatedAt", "Document", "Email", "FancyName", "IsActive", "Name", "Password", "Person", "Role", "UpdateAt" },
-                values: new object[] { 1, new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6551), "100.100.100-19", "johndoe@gmail.com", "", true, "John 1", "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01", 0, "Administrador", new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6568) });
+                columns: new[] { "Id", "CreatedAt", "Document", "Email", "FancyName", "IsActive", "Name", "Password", "Person", "Role", "UpdateAt", "bairro", "cep", "complemento", "localidade", "logradouro", "numero_da_casa", "uf" },
+                values: new object[] { 1, new DateTime(2023, 11, 10, 18, 22, 3, 803, DateTimeKind.Local).AddTicks(327), "100.100.100-19", "johndoe@gmail.com", "", true, "John 1", "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01", 0, "Administrador", new DateTime(2023, 11, 10, 18, 22, 3, 803, DateTimeKind.Local).AddTicks(340), "comasa", "85263789", "casa", "joinville", "teste", "5", "sc" });
 
             migrationBuilder.InsertData(
                 table: "User",
-                columns: new[] { "Id", "CreatedAt", "Document", "Email", "FancyName", "IsActive", "Name", "Password", "Person", "Role", "UpdateAt" },
-                values: new object[] { 2, new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6891), "100.514.624-19", "johndo2@gmail.com", "", true, "John 2", "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01", 0, "Usuario", new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6892) });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Address_UserId",
-                table: "Address",
-                column: "UserId",
-                unique: true);
+                columns: new[] { "Id", "CreatedAt", "Document", "Email", "FancyName", "IsActive", "Name", "Password", "Person", "Role", "UpdateAt", "bairro", "cep", "complemento", "localidade", "logradouro", "numero_da_casa", "uf" },
+                values: new object[] { 2, new DateTime(2023, 11, 10, 18, 22, 3, 803, DateTimeKind.Local).AddTicks(572), "100.514.624-19", "johndo2@gmail.com", "", true, "John 2", "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01", 0, "Usuario", new DateTime(2023, 11, 10, 18, 22, 3, 803, DateTimeKind.Local).AddTicks(573), "comasa", "85263789", "casa", "joinville", "teste", "5", "sc" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -289,9 +264,6 @@ namespace Data.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Address");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 

@@ -9,11 +9,9 @@ namespace Domain.Services.serviceUser.services.SharedUser;
 
 public class UserEamil : ISearchEamil
 {
-
     private readonly Interface.RepositoryDomain.IGetUserRepositoryDomain _userRepositoryDomain;
     private readonly IMapper _mapper;
     
-
     public UserEamil(Interface.RepositoryDomain.IGetUserRepositoryDomain userRepositoryDomain, IMapper mapper)
     {
         _userRepositoryDomain = userRepositoryDomain;
@@ -25,7 +23,6 @@ public class UserEamil : ISearchEamil
     {
         try
         {
-
             var result = await _userRepositoryDomain.UserByEmailAsync(email);
 
             return result != null;
