@@ -4,9 +4,6 @@ using Domain.Interface.RepositoryDomain;
 using Domain.Models;
 using Domain.Services.serviceUser.Criptorgrafia;
 using Domain.Services.serviceUser.InterfaceUsersServices;
-using Domain.Services.serviceUser.loggedInUser;
-using Exceptions;
-using Exceptions.ExceptionBase;
 
 namespace Domain.Services.serviceUser.services;
 

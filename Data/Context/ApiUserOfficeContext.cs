@@ -11,19 +11,12 @@ public class ApiUserOfficeContext : IdentityDbContext
 
     public DbSet<User> User { get; set; }
     public DbSet<Department> Department { get; set; }
-    public DbSet<AddressRegister> AddressRegister { get; set; }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
         modelBuilder.ApplyConfiguration(new UserMap());
         modelBuilder.ApplyConfiguration(new DepartmentMap());
-        modelBuilder.ApplyConfiguration(new AddressRegisterMap());
-
-
     }
-
 }
 
 

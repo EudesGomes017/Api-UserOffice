@@ -9,7 +9,6 @@ public class LoggedInUser
     private static LoggedInUser _intance;
     private readonly Mock<IloggedInUser> _LoggedInUser;
 
-
     private LoggedInUser()
     {
         if (_LoggedInUser == null)

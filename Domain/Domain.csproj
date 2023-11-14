@@ -31,6 +31,7 @@
 	  <PackageReference Include="Newton.JsonMediaTypeFormatter" Version="1.0.3" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	  <PackageReference Include="NSwag.Annotations" Version="13.20.0" />
+	  <PackageReference Include="Refit" Version="6.3.2" />
     <Folder Include="Services\ServiceAddresRegister\" />
     <Folder Include="Services\ServicesDepartment\" />
   </ItemGroup>

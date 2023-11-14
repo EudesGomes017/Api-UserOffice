@@ -1,10 +1,9 @@
-﻿using Domain.Models;
+﻿using Domain.Dto;
 
 namespace Domain.Interface.RepositoryDomain
 {
     public interface IAddressRegisterDomain
     {
-        Task<AddressRegister> CepAsync(string? cep);
-
+        Task<UserAndressDto> CepAsync(string? cep);
     }
 }

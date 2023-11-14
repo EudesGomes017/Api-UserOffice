@@ -13,7 +13,7 @@ public class RequestUserBuilder
             .RuleFor(c => c.Name, f => f.Person.FullName)
             .RuleFor(c => c.Email, f => f.Internet.Email())
             .RuleFor(c => c.Password, f => f.Internet.Password(size))
-            .RuleFor(c => c.Document, f => f.Person.Cpf());          
+            .RuleFor(c => c.Document, f => f.Person.Cpf());                   
     }
 }
 

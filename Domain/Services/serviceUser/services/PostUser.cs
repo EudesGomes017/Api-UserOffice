@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Domain.Dto;
+using Domain.Integracao.Refit;
 using Domain.Interface.RepositoryDomain;
 using Domain.Models;
 using Domain.Services.serviceUser.Criptorgrafia;
@@ -12,14 +13,14 @@ namespace Domain.Services.serviceUser.services;
 
 public class PostUser : IPostUser
 {
-    private readonly Interface.RepositoryDomain.IGetUserRepositoryDomain _userRepositoryDomain;
+    private readonly IGetUserRepositoryDomain _userRepositoryDomain; 
     private readonly IMapper _mapper;
     private readonly EncryptPassword _encryptPassword; 
     private readonly ISearchEamil _searchEamil;
     private readonly IVerifyDocument _verifyDocumento;
     private readonly IVerifyPassWord _verifyPassWord;
 
-    public PostUser(Interface.RepositoryDomain.IGetUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword,
+    public PostUser(IGetUserRepositoryDomain userRepositoryDomain, IMapper mapper, EncryptPassword encryptPassword,
          ISearchEamil searchEamil, IVerifyDocument verifyDocumento, IVerifyPassWord verifyPassWord)
     {
         _userRepositoryDomain = userRepositoryDomain;
@@ -28,7 +29,6 @@ public class PostUser : IPostUser
         _verifyPassWord = verifyPassWord;
         _searchEamil = searchEamil;
         _verifyDocumento = verifyDocumento;
-
     }
 
     public async Task<User> AddUserAsync(UserDto user)
@@ -42,17 +42,13 @@ public class PostUser : IPostUser
             result.Password = Password;
             result.UpdateAt = DateTime.Now;
             _userRepositoryDomain.Adicionar(result);
-
             await _userRepositoryDomain.SalvarMudancasAsync();
-
             result.Password = "";
 
             return result;
         }
-
         catch (ErroValidatorException)
         {
-
             throw new ErroValidatorException(new List<string> { "erro Servidor" });
         }
     }

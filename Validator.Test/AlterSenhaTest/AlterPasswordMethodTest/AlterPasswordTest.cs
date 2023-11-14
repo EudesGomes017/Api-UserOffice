@@ -2,9 +2,7 @@
 using Domain.Models;
 using Domain.Services.serviceUser.services;
 using FluentAssertions;
-using Validator.Test.AlterSenhaTest.IuserMockTest;
 using Validator.Test.AlterSenhaTest.loggedInUser;
-using Validator.Test.MapperBuilderTest;
 using Validator.Test.RepositoryTest;
 using Validator.Test.UtilsTeste.EntidadesBuilderTest;
 using Xunit;

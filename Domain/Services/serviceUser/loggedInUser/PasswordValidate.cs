@@ -7,7 +7,7 @@ public class PasswordValidate : AbstractValidator<string>
 {
     public PasswordValidate()
     {
-       // RuleFor(password => password).NotEmpty().WithMessage(ResourceMenssagensErro.PASSWORD_VAZIO);
+        RuleFor(p => p).NotEmpty().WithMessage(ResourceMenssagensErro.PASSWORD_VAZIO);
 
         When(password => !string.IsNullOrWhiteSpace(password), () =>
         {

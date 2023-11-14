@@ -97,6 +97,15 @@ namespace Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cep informado não existe!.
+        /// </summary>
+        public static string CEP_ERRADO {
+            get {
+                return ResourceManager.GetString("CEP_ERRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Erro ao deletar o usuário !.
         /// </summary>
         public static string DELETE_USER {

@@ -38,6 +38,26 @@ public class ControllerBase : IClassFixture<ApplicationFactory<Program>>
         return result;
     }
 
+    protected async Task<HttpResponseMessage> GetViaCep(string method, object parameters)
+    {
+        var queryString = parameters != null
+            ? "?" + string.Join("&", parameters.GetType().GetProperties()
+                .Select(p => $"{p.Name}={Uri.EscapeDataString(p.GetValue(parameters)?.ToString() ?? string.Empty)}"))
+            : string.Empty;
+
+        var result = await _httpClient.GetAsync($"{method}{queryString}");
+        return result;
+    }
+
+    //protected async Task<HttpResponseMessage> GetViaCepNotFound(string method, object parameters)
+    //{
+    //    var queryString = parameters != null
+    //        ? $"?{string.Join("&", parameters.GetType().GetProperties().Select(p => $"{p.Name}={Uri.EscapeDataString(p.GetValue(parameters)?.ToString() ?? string.Empty)}"))}"
+    //        : string.Empty;
+
+    //    return await _httpClient.GetAsync($"{method}{queryString}");
+    //}
+
     protected async Task<string> Login(string email, string password)
     {
         var requisition = new LoginUserDto
@@ -63,4 +83,6 @@ public class ControllerBase : IClassFixture<ApplicationFactory<Program>>
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
         }
     }
+
+    
 }

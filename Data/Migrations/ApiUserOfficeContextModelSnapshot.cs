@@ -22,55 +22,6 @@ namespace Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Domain.Models.AddressRegister", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Cep")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasMaxLength(255)
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Locality")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Neighborhood")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Patio")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UF")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdateAt")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("Address", (string)null);
-                });
-
             modelBuilder.Entity("Domain.Models.Department", b =>
                 {
                     b.Property<int>("Id")
@@ -162,6 +113,34 @@ namespace Data.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("bairro")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("cep")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("complemento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("localidade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("logradouro")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("numero_da_casa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("uf")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("User", (string)null);
@@ -170,7 +149,7 @@ namespace Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6551),
+                            CreatedAt = new DateTime(2023, 11, 10, 18, 22, 3, 803, DateTimeKind.Local).AddTicks(327),
                             Document = "100.100.100-19",
                             Email = "johndoe@gmail.com",
                             FancyName = "",
@@ -179,12 +158,19 @@ namespace Data.Migrations
                             Password = "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01",
                             Person = 0,
                             Role = "Administrador",
-                            UpdateAt = new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6568)
+                            UpdateAt = new DateTime(2023, 11, 10, 18, 22, 3, 803, DateTimeKind.Local).AddTicks(340),
+                            bairro = "comasa",
+                            cep = "85263789",
+                            complemento = "casa",
+                            localidade = "joinville",
+                            logradouro = "teste",
+                            numero_da_casa = "5",
+                            uf = "sc"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6891),
+                            CreatedAt = new DateTime(2023, 11, 10, 18, 22, 3, 803, DateTimeKind.Local).AddTicks(572),
                             Document = "100.514.624-19",
                             Email = "johndo2@gmail.com",
                             FancyName = "",
@@ -193,7 +179,14 @@ namespace Data.Migrations
                             Password = "461b59bea21127e7d9257e49bf8c6637e266bbdcf3bab98b5c0d0e4bb963e003409fa0e09e9555b56bda3eaf3d4dc345478e7c2aaf3678073d8d4749ab8d0d01",
                             Person = 0,
                             Role = "Usuario",
-                            UpdateAt = new DateTime(2023, 10, 29, 22, 20, 18, 79, DateTimeKind.Local).AddTicks(6892)
+                            UpdateAt = new DateTime(2023, 11, 10, 18, 22, 3, 803, DateTimeKind.Local).AddTicks(573),
+                            bairro = "comasa",
+                            cep = "85263789",
+                            complemento = "casa",
+                            localidade = "joinville",
+                            logradouro = "teste",
+                            numero_da_casa = "5",
+                            uf = "sc"
                         });
                 });
 
@@ -395,17 +388,6 @@ namespace Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Models.AddressRegister", b =>
-                {
-                    b.HasOne("Domain.Models.User", "User")
-                        .WithOne("AddressRegister")
-                        .HasForeignKey("Domain.Models.AddressRegister", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Domain.Models.Department", b =>
                 {
                     b.HasOne("Domain.Models.User", "user")
@@ -470,8 +452,6 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Domain.Models.User", b =>
                 {
-                    b.Navigation("AddressRegister");
-
                     b.Navigation("Departments");
                 });
 #pragma warning restore 612, 618
