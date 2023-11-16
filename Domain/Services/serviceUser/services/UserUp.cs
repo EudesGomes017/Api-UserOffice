@@ -34,11 +34,14 @@ public class UserUp : IUserUp
 
             if (user != null)
             {
+                var Password = _encryptPassword.encrypt(modelUser.Password);
                 var result = _mapper.Map<User>(modelUser);
+                result.Password = Password;
                 result.UpdateAt = DateTime.Now;
                 result.CreatedAt = user.CreatedAt;
                 _userRepositoryDomain.Atualizar(result);
                 await _userRepositoryDomain.SalvarMudancasAsync();
+                result.Password = "";
                 return modelUser;
             }
             throw new Exception("Erro ao atualizar");

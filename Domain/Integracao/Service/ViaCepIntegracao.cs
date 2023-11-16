@@ -15,7 +15,7 @@ public class ViaCepIntegracao : IViaCepIntegracao
         _viacepRefit = viacepRefit;
 
     }
-    public async Task<UserAndressDto> ObterDadosViaCep(string cep)
+    public async Task<UserAndressDto> GetDataViaZipCode(string cep)
     {
         var responseData = await _viacepRefit.ObterDadosViaCep(cep);
 

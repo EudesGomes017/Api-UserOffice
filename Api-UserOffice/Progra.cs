@@ -211,8 +211,3 @@ namespace Api_UserOffice
     }
 
 }
-
-//public partial class ProgrameIntegracao
-//{
-
-//}

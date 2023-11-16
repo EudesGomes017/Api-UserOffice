@@ -21,7 +21,6 @@ public class AlterPasswordAndPoint : ControllerBase
         _password = factory.RecoverPassword();      
     }
 
-
     [Fact]
     public async Task Validates_Sucesso()
     {

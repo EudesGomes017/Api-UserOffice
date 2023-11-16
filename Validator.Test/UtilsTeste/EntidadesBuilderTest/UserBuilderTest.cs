@@ -1,6 +1,5 @@
 ﻿using Bogus;
 using Bogus.Extensions.Brazil;
-using Domain.Dto;
 using Domain.Models;
 using Validator.Test.RepositoryTest;
 
@@ -20,8 +19,8 @@ public class UserBuilderTest
             {
                 password = f.Internet.Password();
 
-               return EncryptPasswordTestBuilder.Instantiates().encrypt(password);
-             
+                return EncryptPasswordTestBuilder.Instantiates().encrypt(password);
+
             })
             .RuleFor(c => c.Document, f => f.Person.Cpf());
 
