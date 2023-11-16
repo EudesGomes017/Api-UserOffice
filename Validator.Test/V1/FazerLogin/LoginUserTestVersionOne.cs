@@ -22,11 +22,10 @@ public class LoginUserTestVersionOne : ControllerBase
     [Fact]
     public async Task Validates_Sucesso()
     {
-        var requisition =  new LoginUserDto
+        var requisition = new LoginUserDto
         {
             Email = _user.Email,
             Password = password
-
         };
 
         var answer = await PostRequest(METODO, requisition); 

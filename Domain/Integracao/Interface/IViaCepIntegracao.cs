@@ -4,6 +4,6 @@ namespace Domain.Integracao.Interface
 {
     public interface IViaCepIntegracao
     {
-        Task<UserAndressDto> ObterDadosViaCep(string cep);
+        Task<UserAndressDto> GetDataViaZipCode(string cep);
     }
 }

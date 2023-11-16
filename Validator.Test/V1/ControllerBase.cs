@@ -1,7 +1,9 @@
 ﻿using Api_UserOffice;
 using Domain.Dto;
+using Domain.Models;
 using Exceptions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Globalization;
 using System.Text;
 using System.Text.Json;
@@ -38,8 +40,11 @@ public class ControllerBase : IClassFixture<ApplicationFactory<Program>>
         return result;
     }
 
-    protected async Task<HttpResponseMessage> GetViaCep(string method, object parameters)
+    protected async Task<HttpResponseMessage> GetViaCep(string method, object parameters, string token = "")
     {
+
+        AuthorizationRequest(token);
+
         var queryString = parameters != null
             ? "?" + string.Join("&", parameters.GetType().GetProperties()
                 .Select(p => $"{p.Name}={Uri.EscapeDataString(p.GetValue(parameters)?.ToString() ?? string.Empty)}"))

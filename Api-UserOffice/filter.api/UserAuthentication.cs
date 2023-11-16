@@ -46,7 +46,6 @@ public class UserAuthentication : AuthorizeAttribute, IAsyncAuthorizationFilter
         }
        
     }
-
     private string TokenRequisition(AuthorizationFilterContext context)
     {
         var authoriz = context.HttpContext.Request.Headers["Authorization"].ToString();

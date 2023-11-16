@@ -1,10 +1,4 @@
-﻿
-
-using Domain.Models;
-using NSwag.Annotations;
-using System.Text.Json.Serialization;
-
-namespace Domain.Dto
+﻿namespace Domain.Dto
 {
     public class AlterPasswordUpDto
     {
